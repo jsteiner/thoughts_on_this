@@ -5,7 +5,11 @@ class ImageSubjectsController < ApplicationController
     image_subject = ImageSubject.new(params[:image_subject])
     @discussion = current_user.discussions.new(name: params[:discussion_name])
     @discussion.subject = image_subject
-    @discussion.save
-    redirect_to @discussion
+
+    if @discussion.save
+      redirect_to @discussion
+    else
+      render dashboard_path
+    end
   end
 end
