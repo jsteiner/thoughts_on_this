@@ -1,3 +1,5 @@
 Discepto::Application.routes.draw do
-  root to: 'high_voltage/pages#show', :id => 'homepage'
+  resource :session, :controller => 'sessions', only: [:create]
+  resource :dashboard, only: [:show]
+  root to: 'pages#show', :id => 'homepage'
 end

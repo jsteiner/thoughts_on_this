@@ -7,3 +7,9 @@ Feature: Visit the homepage
     When I view the homepage
     Then I should be able to read about the application
     And I should be able to sign in or sign up
+
+  Scenario: User visits the homepage
+    Given I sign in
+    Then I should be redirected to my dashboard
+    When I view the homepage
+    Then I should be redirected to my dashboard
