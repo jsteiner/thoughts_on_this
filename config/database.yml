@@ -7,7 +7,7 @@ development:
   password:
   host: localhost
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: discepto_test
@@ -15,3 +15,6 @@ test:
   username: root
   password:
   host: localhost
+
+cucumber:
+  <<: *test
