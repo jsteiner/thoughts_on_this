@@ -4,6 +4,7 @@ gem 'rails', '3.2.5'
 gem 'pg'
 gem 'high_voltage'
 gem 'clearance'
+gem 'paperclip'
 
 group :development do
   gem 'guard-spork'

@@ -1,0 +1,12 @@
+<%= form_for @image_subject do |form| %>
+  <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
+  <%= form.file_field :image %>
+  <%= form.submit 'Discuss' %>
+<% end %>
+
+<h2>Your Discussions</h2>
+<ul id="discussions">
+  <% @discussions.each do |discussion| %>
+    <li><%= link_to discussion.name, discussion %></li>
+  <% end %>
+</ul>

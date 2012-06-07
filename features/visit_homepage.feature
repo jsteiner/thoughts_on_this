@@ -10,6 +10,6 @@ Feature: Visit the homepage
 
   Scenario: User visits the homepage
     Given I sign in
-    Then I should be redirected to my dashboard
+    Then I should be on the dashboard page
     When I view the homepage
     Then I should be redirected to my dashboard
