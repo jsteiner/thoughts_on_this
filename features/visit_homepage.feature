@@ -6,3 +6,4 @@ Feature: Visit the homepage
   Scenario: Guest visits the homepage
     When I view the homepage
     Then I should be able to read about the application
+    And I should be able to sign in or sign up
