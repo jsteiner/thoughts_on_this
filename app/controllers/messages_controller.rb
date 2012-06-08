@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
   def create
-    @discussion = Discussion.find(params[:discussion_id])
+    discussion = Discussion.find(params[:discussion_id])
     message_params = params[:message].merge(user_name: current_user.email)
-    @discussion.messages.create(message_params)
-    redirect_to @discussion
+    @message = discussion.messages.create(message_params)
   end
 end

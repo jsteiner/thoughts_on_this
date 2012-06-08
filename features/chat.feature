@@ -3,6 +3,7 @@ Feature: Chat
   As a user or guest
   I should be able view and send messages
 
+  @javascript
   Scenario: User sends a message
     Given I have created a discussion
     When I post a message
