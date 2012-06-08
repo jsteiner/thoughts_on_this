@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
+  def has_name?
+    first_name && last_name
+  end
 end

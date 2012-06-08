@@ -2,7 +2,9 @@
   <%= render @messages %>
 </ul>
 
-<%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "Send" %>
+<% if current_user.has_name? %>
+  <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit "Send" %>
+  <% end %>
 <% end %>

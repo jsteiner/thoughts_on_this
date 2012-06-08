@@ -2,10 +2,10 @@ include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory :discussion do
-    name "A discussion"
+    name 'A discussion'
     user
 
-    trait(:image) do
+    trait :image do
       association :subject, factory: :image_subject
     end
   end
@@ -15,6 +15,6 @@ FactoryGirl.define do
   end
 
   factory :message do
-    content "Hello World!"
+    content 'Hello World!'
   end
 end

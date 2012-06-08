@@ -1,8 +1,5 @@
 class Guest
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
-
-  def initialize(first_name, last_name)
+  def initialize(first_name = nil, last_name = nil)
     @first_name, @last_name = first_name, last_name
   end
 
@@ -12,6 +9,10 @@ class Guest
     else
       nil
     end
+  end
+
+  def has_name?
+    @first_name && @last_name
   end
 
   def persisted?

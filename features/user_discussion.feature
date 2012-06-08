@@ -5,13 +5,20 @@ Feature: Discussion
 
   Scenario: User should only be prompted for their name once
     Given I sign in
-    And I visit a discussion page
+    When I visit a discussion page
     Then I should be prompted for my name
     When I submit my name and return to the discussion page
     Then I should not be prompted for my name
 
+  Scenario: User should not be able to post without submitting their name
+    Given I sign in
+    When I visit a discussion page
+    Then I should not be able to post a message
+    When I submit my name and return to the discussion page
+    Then I should be able to post a message
+
   @javascript
   Scenario: User sends a message
-    Given I have created a discussion
+    Given I visit a discussion page and enter my name
     When I post a message
     Then I should see the message in the chat box

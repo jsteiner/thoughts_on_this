@@ -44,6 +44,14 @@ When /^I post a message$/ do
   end
 end
 
+Then /^I should be able to post a message$/ do
+  page.should have_css("#new_message")
+end
+
+Then /^I should not be able to post a message$/ do
+  page.should have_no_css("#new_message")
+end
+
 Then /^I should see the message in the chat box$/ do
   within "#chat" do
     page.should have_css("li", text: "something")

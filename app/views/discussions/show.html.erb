@@ -1,4 +1,4 @@
-<% unless current_user.full_name %>
+<% unless current_user.has_name? %>
   <p>
     Don't be a stranger! Enter your name or <%= link_to 'sign in', sign_in_path %>,
     so everybody else knows who you are.

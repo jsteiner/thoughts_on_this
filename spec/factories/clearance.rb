@@ -7,6 +7,11 @@ FactoryGirl.define do
   factory :user do
     email
     password "password"
+
+    trait :with_name do
+      first_name "Joe"
+      last_name "Shmoe"
+    end
   end
 
 end
