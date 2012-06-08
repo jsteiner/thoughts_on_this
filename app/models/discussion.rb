@@ -4,7 +4,7 @@ class Discussion < ActiveRecord::Base
   belongs_to :user
   has_many :messages # TODO: dependent destroy
 
-  validates_presence_of :user_id
+  validates_presence_of :user_id, :name
 
   def ordered_messages
     messages.order('created_at ASC')
