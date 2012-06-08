@@ -1,7 +1,7 @@
-Feature: Upload images
-  In order to discuss images with others
+Feature: Create Discussions
+  In order to discuss my work with others
   As a user
-  I should be able upload my images to the site
+  I should be able upload my work to the site
 
   Scenario: User uploads an image
     Given I sign in
