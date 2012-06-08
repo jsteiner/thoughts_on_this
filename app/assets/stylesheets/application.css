@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
 */
+
+#chat-container {
+  padding-left: 10px;
+  border-left: 1px solid #CCC;
+}
