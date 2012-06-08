@@ -4,7 +4,23 @@
 
 <% if current_user.has_name? %>
   <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
-    <%= f.text_field :content %>
-    <%= f.submit "Send" %>
+    <%= f.text_area :content, class: 'input-xlarge', rows: '3' %>
+    <%= f.submit "Send", class: 'btn btn-primary' %>
+  <% end %>
+<% else %>
+  <p>
+    Don't be a stranger! Enter your name or <%= link_to 'sign in', sign_in_path %>,
+    so everybody else knows who you are.
+  </p>
+  <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
+    <div class='control-group'>
+      <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
+    </div>
+    <div class='control-group'>
+      <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
+    </div>
+    <div class='form-actions'>
+      <%= submit_tag 'Join discussion', class: 'btn btn-primary' %>
+    </div>
   <% end %>
 <% end %>

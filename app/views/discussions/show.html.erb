@@ -1,16 +1,10 @@
-<% unless current_user.has_name? %>
-  <p>
-    Don't be a stranger! Enter your name or <%= link_to 'sign in', sign_in_path %>,
-    so everybody else knows who you are.
-  </p>
-  <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
-    <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
-    <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
-    <%= submit_tag 'Join discussion' %>
-  <% end %>
-<% end %>
+<div class='row'>
+  <div class='span9'>
+    <h2 data-role="discussion-name"><%= @discussion.name %></h2>
+    <%= render @discussion.subject %>
+  </div>
 
-<h2 data-role="discussion-name"><%= @discussion.name %></h2>
-<%= render @discussion.subject %>
-
-<%= render 'chat' %>
+  <div class='span3'>
+    <%= render 'chat' %>
+  </div>
+</div>

@@ -1,12 +1,24 @@
-<%= form_for @image_subject do |form| %>
-  <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
-  <%= form.file_field :image %>
-  <%= form.submit 'Discuss' %>
-<% end %>
+<div class='row'>
+  <div class='span9'>
+    <%= form_for @image_subject do |form| %>
+      <div class='control-group'>
+        <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
+      </div>
+      <div class='control-group'>
+        <%= form.file_field :image %>
+      </div>
+      <div class='form-actions'>
+        <%= form.submit 'Discuss', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
 
-<h2>Your Discussions</h2>
-<ul id="discussions">
-  <% @discussions.each do |discussion| %>
-    <li><%= link_to discussion.name, discussion %> <%= time_ago_in_words(discussion.created_at) %> ago</li>
-  <% end %>
-</ul>
+  <div class='span3'>
+    <h2>Your Discussions</h2>
+    <ul id="discussions">
+      <% @discussions.each do |discussion| %>
+        <li><%= link_to discussion.name, discussion %> <%= time_ago_in_words(discussion.created_at) %> ago</li>
+      <% end %>
+    </ul>
+  </div>
+</div>
