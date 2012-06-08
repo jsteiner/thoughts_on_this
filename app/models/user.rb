@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Clearance::User
-  has_many :discussions # TODO: dependent: destroy
+  has_many :discussions, dependent: :destroy
   attr_accessible :first_name, :last_name
 
   def full_name

@@ -19,4 +19,14 @@ describe User do
       user.has_name?.should be_false
     end
   end
+
+  context '#destroy' do
+    it "also destroys the user's discussions" do
+      user = create(:user)
+      discussion = create(:discussion, :image, user: user)
+      Discussion.all.should have(1).item
+      user.destroy
+      Discussion.all.should have(0).items
+    end
+  end
 end

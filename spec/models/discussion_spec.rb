@@ -14,4 +14,14 @@ describe Discussion do
       discussion.ordered_messages.should == [oldest_message, newest_message]
     end
   end
+
+  context '#destroy' do
+    it "also destroys the discussion's messages" do
+      discussion = create(:discussion, :image)
+      message = create(:message, discussion: discussion)
+      Message.all.should have(1).item
+      discussion.destroy
+      Message.all.should have(0).items
+    end
+  end
 end
