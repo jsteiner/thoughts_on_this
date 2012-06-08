@@ -1,2 +1,12 @@
 <h2 data-role="discussion-name"><%= @discussion.name %></h2>
 <%= render @discussion.subject %>
+
+
+<ul id="chat">
+  <%= render @messages %>
+</ul>
+
+<%= form_for @message, url: discussion_messages_path(@discussion) do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit "Send" %>
+<% end %>

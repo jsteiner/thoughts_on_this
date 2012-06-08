@@ -12,6 +12,10 @@ Feature: Sign up
     When I sign up with "email@example.com" and ""
     Then I am told to enter a password
 
+  Scenario: Visitor signs up with blank first name
+    When I sign up with "email@example.com" and ""
+    Then I am told to enter a password
+
   Scenario: Visitor signs up with valid data
     When I sign up with "email@example.com" and "password"
     Then I should be signed in

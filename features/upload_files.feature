@@ -5,8 +5,7 @@ Feature: Upload images
 
   Scenario: User uploads an image
     Given I sign in
-    When I visit the dashboard
-    And I upload an image with a name
+    When I upload an image with a name
     Then I should see the image and name on the page
     When I visit the dashboard
     Then I should see the discussion in my list of discussions
