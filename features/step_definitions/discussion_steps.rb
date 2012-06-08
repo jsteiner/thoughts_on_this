@@ -1,5 +1,3 @@
-# User
-
 Given /^I have created a discussion$/ do
   steps %{
     Given I sign in
@@ -8,22 +6,31 @@ Given /^I have created a discussion$/ do
 end
 
 Then /^I should not be prompted for my name$/ do
-  page.should have_no_css("form input#username")
+  page.should have_no_css("form#new_name")
 end
 
-# Guest
-
 Then /^I should be prompted for my name$/ do
-  page.should have_css("form#new_guest")
+  page.should have_css("form#new_name")
 end
 
 Given /^I visit a discussion page and enter my name$/ do
-  step %{I visit a discussion page}
-  fill_in "guest_email", with: "my name"
-  click_button 'Join discussion'
+  steps %{
+    Given I visit a discussion page
+    When I enter my name
+  }
 end
 
-# Any
+When /^I submit my name and return to the discussion page$/ do
+  step %{I enter my name}
+end
+
+When /^I enter my name$/ do
+  within "#new_name" do
+    fill_in "first_name", with: "Joe"
+    fill_in "last_name", with: "Shmoe"
+    click_button "Join discussion"
+  end
+end
 
 Given /^I visit a discussion page$/ do
   discussion = create(:discussion, :image)

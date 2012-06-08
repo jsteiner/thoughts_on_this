@@ -4,7 +4,7 @@ Discepto::Application.routes.draw do
   resources :image_subjects, only: [:create]
   resources :discussions, only: [:show] do
     resources :messages, only: [:create]
-    resources :guests, only: [:create]
+    resources :names, only: [:create]
   end
   root to: 'pages#show', :id => 'homepage'
 end

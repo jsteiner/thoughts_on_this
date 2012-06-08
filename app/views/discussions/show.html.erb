@@ -1,7 +1,12 @@
-<% unless current_user.email %>
-  <%= form_for Guest.new, url: discussion_guests_path(@discussion) do |f| %>
-    <%= f.text_field :email %>
-    <%= f.submit 'Join discussion' %>
+<% unless current_user.full_name %>
+  <p>
+    Don't be a stranger! Enter your name or <%= link_to 'sign in', sign_in_path %>,
+    so everybody else knows who you are.
+  </p>
+  <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
+    <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
+    <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
+    <%= submit_tag 'Join discussion' %>
   <% end %>
 <% end %>
 

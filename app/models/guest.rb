@@ -2,11 +2,16 @@ class Guest
   extend ActiveModel::Naming
   include ActiveModel::Conversion
 
-  # TODO: change this to name, once that is implemented in User
-  attr_reader :email
+  def initialize(first_name, last_name)
+    @first_name, @last_name = first_name, last_name
+  end
 
-  def initialize(email = nil)
-    @email = email
+  def full_name
+    if @first_name && @last_name
+      "#{@first_name} #{@last_name}"
+    else
+      nil
+    end
   end
 
   def persisted?

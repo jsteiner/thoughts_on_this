@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def current_user
-    super || Guest.new(session[:email])
+    super || Guest.new(session[:first_name], session[:last_name])
   end
 end

@@ -3,9 +3,11 @@ Feature: Discussion
   As a user
   I should be able view and send messages
 
-  Scenario: User visits the discussion
+  Scenario: User should only be prompted for their name once
     Given I sign in
     And I visit a discussion page
+    Then I should be prompted for my name
+    When I submit my name and return to the discussion page
     Then I should not be prompted for my name
 
   @javascript

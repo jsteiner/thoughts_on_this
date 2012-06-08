@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608000124) do
+ActiveRecord::Schema.define(:version => 20120608152437) do
 
   create_table "discussions", :force => true do |t|
     t.string   "name",         :null => false
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20120608000124) do
     t.string   "remember_token",     :limit => 128
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
