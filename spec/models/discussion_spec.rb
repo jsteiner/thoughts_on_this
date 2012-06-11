@@ -4,6 +4,16 @@ describe Discussion do
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:name) }
 
+  context '#generate_unique_url' do
+    it 'does not change the url on update' do
+      discussion = create(:discussion, :image)
+      url = discussion.url
+      discussion.name = "New name"
+      discussion.save
+      discussion.url.should == url
+    end
+  end
+
   context '#ordered_messages' do
     it 'returns messages in chronological order' do
       discussion = create(:discussion, :image)

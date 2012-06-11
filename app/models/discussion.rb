@@ -4,14 +4,35 @@ class Discussion < ActiveRecord::Base
   belongs_to :user
   has_many :messages, dependent: :destroy
 
-  validates_presence_of :user_id, :name
+  validates_presence_of :user_id, :name, :url
   validates_associated :subject
+  validates_uniqueness_of :url
+
+  before_validation :generate_unique_url, on: :create
 
   def self.persisted
     where('id is not null')
   end
 
+  def self.url_exists?(url)
+    select('url').map(&:url).include?(url)
+  end
+
+  def to_param
+    url
+  end
+
   def ordered_messages
     messages.order('created_at ASC')
+  end
+
+  private
+
+  def generate_unique_url
+    url = ::SecureRandom.hex(5)
+    while Discussion.url_exists?(url)
+      url = ::SecureRandom.hex(5)
+    end
+    self.url = url
   end
 end

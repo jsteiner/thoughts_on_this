@@ -6,6 +6,6 @@ class NamesController < ApplicationController
       session[:first_name] = params[:first_name]
       session[:last_name] = params[:last_name]
     end
-    redirect_to Discussion.find(params[:discussion_id])
+    redirect_to Discussion.find_by_url!(params[:discussion_id])
   end
 end

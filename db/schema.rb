@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608152437) do
+ActiveRecord::Schema.define(:version => 20120611162228) do
 
   create_table "discussions", :force => true do |t|
     t.string   "name",         :null => false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120608152437) do
     t.integer  "user_id",      :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "url"
   end
 
   add_index "discussions", ["subject_id"], :name => "index_discussions_on_subject_id"
