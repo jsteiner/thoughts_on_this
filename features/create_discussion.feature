@@ -9,3 +9,8 @@ Feature: Create Discussions
     Then I should see the image and name on the page
     When I visit the dashboard
     Then I should see the discussion in my list of discussions
+
+  Scenario: User uploads an invalid filetype
+    Given I sign in
+    When I upload an invalid image
+    Then I should see an error message
