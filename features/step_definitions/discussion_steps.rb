@@ -33,15 +33,19 @@ When /^I enter my name$/ do
 end
 
 Given /^I visit a discussion page$/ do
-  discussion = create(:discussion, :image)
-  visit discussion_path(discussion)
+  @discussion = create(:discussion, :image)
+  visit discussion_path(@discussion)
 end
 
-When /^I post a message$/ do
+When /^I post the message "(.*?)"$/ do |message|
   within "#new_message" do
-    fill_in "message_content", with: "something"
+    fill_in "message_content", with: message
     click_button "Send"
   end
+end
+
+When /^Another person posts the message "(.*?)"$/ do |message|
+  Pusher[@discussion.url].trigger('new_message', { message: "<li>#{message}</li>" })
 end
 
 Then /^I should be able to post a message$/ do
@@ -52,8 +56,8 @@ Then /^I should not be able to post a message$/ do
   page.should have_no_css("#new_message")
 end
 
-Then /^I should see the message in the chat box$/ do
+Then /^I should see "(.*?)" in the chat box$/ do |message|
   within "#chat" do
-    page.should have_css("li", text: "something")
+    page.should have_css("li", text: message)
   end
 end

@@ -1,4 +1,26 @@
 <div id='chat-container'>
+
+  <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    <% if Rails.env.development? %>
+      // Enable pusher logging - don't include this in production
+      Pusher.log = function(message) {
+        if (window.console && window.console.log) window.console.log(message);
+      };
+
+      // Flash fallback logging - don't include this in production
+      WEB_SOCKET_DEBUG = true;
+    <% end %>
+
+    var pusher = new Pusher('acecc5ffed2935bdc2d9');
+    var channel = pusher.subscribe('<%= @discussion.url %>');
+    channel.bind('new_message', function(data) {
+      $("#chat").append(data.message);
+      // TODO: This should be instant. It shouldn't wait for the response.
+      $("#new_message")[0].reset();
+    });
+  </script>
+
   <ul id="chat">
     <%= render @messages %>
   </ul>
@@ -10,8 +32,9 @@
     <% end %>
   <% else %>
     <p>
-      Don't be a stranger! Enter your name or <%= link_to 'sign in', sign_in_path %>,
-      so everybody else knows who you are.
+      Don't be a stranger! Enter your name
+      <% unless signed_in? %>, or <%= link_to 'sign in', sign_in_path %>,<% end %>
+      to begin chating.
     </p>
     <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
       <div class='control-group'>

@@ -11,5 +11,5 @@ Feature: Discussion
   @javascript
   Scenario: Guest sends a message
     Given I visit a discussion page and enter my name
-    When I post a message
-    Then I should see the message in the chat box
+    When I post the message "hello world!"
+    Then I should see "hello world!" in the chat box

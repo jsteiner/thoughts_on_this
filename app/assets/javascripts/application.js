@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$('#message_content').keypress(function(e){
+  if(e.which == 13){
+    e.preventDefault();
+    $('form#new_message').submit();
+    return false;
+  }
+});

@@ -5,9 +5,12 @@ gem 'pg'
 gem 'high_voltage'
 gem 'clearance'
 gem 'paperclip'
+gem 'pusher'
+gem 'thin'
 
 group :development do
   gem 'guard-spork'
+  gem 'foreman'
 end
 
 group :test, :development do

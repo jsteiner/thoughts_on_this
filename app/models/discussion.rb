@@ -29,9 +29,9 @@ class Discussion < ActiveRecord::Base
   private
 
   def generate_unique_url
-    url = ::SecureRandom.hex(5)
+    url = SecureRandom.hex(5)
     while Discussion.url_exists?(url)
-      url = ::SecureRandom.hex(5)
+      url = SecureRandom.hex(5)
     end
     self.url = url
   end
