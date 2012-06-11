@@ -1,22 +1,13 @@
-development:
+development: &default
   adapter: postgresql
-  encoding: unicode
   database: discepto_development
   pool: 5
-  username: root
-  password:
-  host: localhost
+  timeout: 5000
   min_messages: warning
 
 test: &test
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: discepto_test
-  pool: 5
-  username: root
-  password:
-  host: localhost
-  min_messages: warning
 
 cucumber:
   <<: *test
