@@ -16,7 +16,6 @@
     var channel = pusher.subscribe('<%= @discussion.url %>');
     channel.bind('new_message', function(data) {
       $("#chat").append(data.message);
-      // TODO: This should be instant. It shouldn't wait for the response.
       $("#new_message")[0].reset();
     });
   </script>

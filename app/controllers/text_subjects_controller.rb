@@ -1,15 +1,12 @@
-class ImageSubjectsController < ApplicationController
-  before_filter :authorize
-
+class TextSubjectsController < ApplicationController
   def create
-    @image_subject = ImageSubject.new(params[:image_subject])
+    @text_subject = TextSubject.new(params[:text_subject])
     @discussion = current_user.discussions.new(name: params[:discussion_name])
-    @discussion.subject = @image_subject
+    @discussion.subject = @text_subject
 
     if @discussion.save
       redirect_to @discussion
     else
-      @text_subject = TextSubject.new
       @discussions = current_user.discussions.persisted
       render 'dashboards/show'
     end

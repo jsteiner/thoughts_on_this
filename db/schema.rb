@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611162228) do
+ActiveRecord::Schema.define(:version => 20120612204056) do
 
   create_table "discussions", :force => true do |t|
     t.string   "name",         :null => false
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20120611162228) do
   end
 
   add_index "messages", ["discussion_id"], :name => "index_messages_on_discussion_id"
+
+  create_table "text_subjects", :force => true do |t|
+    t.string "language"
+    t.text   "content"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

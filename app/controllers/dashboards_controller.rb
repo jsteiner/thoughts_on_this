@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
 
   def show
     @image_subject = ImageSubject.new
+    @text_subject = TextSubject.new
     @discussions = current_user.discussions
   end
 end
