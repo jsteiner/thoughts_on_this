@@ -7,6 +7,7 @@ class TextSubjectsController < ApplicationController
     if @discussion.save
       redirect_to @discussion
     else
+      @image_subject = ImageSubject.new
       @discussions = current_user.discussions.persisted
       render 'dashboards/show'
     end

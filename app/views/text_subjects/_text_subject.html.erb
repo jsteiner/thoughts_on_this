@@ -1,3 +1,9 @@
 <pre class='text-content'>
-<code data-language='<%= text_subject.language %>'><%= text_subject.content %></code>
+<code class='language-<%= text_subject.language.downcase %>'><%= text_subject.content %></code>
 </pre>
+
+<% content_for :javascript do %>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+<% end %>

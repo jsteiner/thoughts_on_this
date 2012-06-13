@@ -4,6 +4,9 @@ class TextSubject < ActiveRecord::Base
   accepts_nested_attributes_for :discussion
 
   def self.available_languages
-    %w(Javascript HTML CSS PHP Python Ruby C Shell Scheme Lua C#)
+    %w(Bash C C# C++ CSS Django Erlang
+       Go HTML HTTP Haskell JSON Java Javascript
+       Markdown Nginx Objective\ C PHP Perl Python
+       Ruby SQL Scala)
   end
 end

@@ -13,13 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require rainbow.min
 //= require_tree .
-
-$('#message_content').keypress(function(e){
-  if(e.which == 13){
-    e.preventDefault();
-    $('form#new_message').submit();
-    return false;
-  }
-});

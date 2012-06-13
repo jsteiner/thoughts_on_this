@@ -29,11 +29,12 @@
   <div class='container-fluid'>
     <% flash.each do |key, value| -%>
       <div class="flash <%= key %>"><%= value %></div>
-    <% end -%>
+    <% end %>
 
     <%= yield %>
   </div>
 
   <%= javascript_include_tag "application" %>
+  <%= yield :javascript %>
 </body>
 </html>

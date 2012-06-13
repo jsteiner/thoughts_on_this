@@ -1,24 +1,35 @@
 <div id='chat-container'>
 
-  <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    <% if Rails.env.development? %>
-      // Enable pusher logging - don't include this in production
-      Pusher.log = function(message) {
-        if (window.console && window.console.log) window.console.log(message);
-      };
+  <% content_for :javascript do %>
+    <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      <% if Rails.env.development? %>
+        // Enable pusher logging - don't include this in production
+        Pusher.log = function(message) {
+          if (window.console && window.console.log) window.console.log(message);
+        };
 
-      // Flash fallback logging - don't include this in production
-      WEB_SOCKET_DEBUG = true;
-    <% end %>
+        // Flash fallback logging - don't include this in production
+        WEB_SOCKET_DEBUG = true;
+      <% end %>
 
-    var pusher = new Pusher('acecc5ffed2935bdc2d9');
-    var channel = pusher.subscribe('<%= @discussion.url %>');
-    channel.bind('new_message', function(data) {
-      $("#chat").append(data.message);
-      $("#new_message")[0].reset();
-    });
-  </script>
+      var pusher = new Pusher('acecc5ffed2935bdc2d9');
+      var channel = pusher.subscribe('<%= @discussion.url %>');
+      channel.bind('new_message', function(data) {
+        $("#chat").append(data.message);
+        $("#new_message")[0].reset();
+      });
+
+      // Send on 'return'
+      $('#message_content').keypress(function(e){
+        if(e.which == 13){
+          e.preventDefault();
+          $('form#new_message').submit();
+          return false;
+        }
+      });
+    </script>
+  <% end %>
 
   <ul id="chat">
     <%= render @messages %>
