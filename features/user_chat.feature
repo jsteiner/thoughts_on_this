@@ -1,4 +1,4 @@
-Feature: Discussion
+Feature: Chat
   In order to discuss the subject with others
   As a user
   I should be able view and send messages

@@ -1,0 +1,15 @@
+<%= form_for @discussion, html: { multipart: true } do |form| %>
+  <%= render "shared/error_messages", :object => @discussion %>
+
+  <div class='control-group'>
+    <%= form.text_field :name, placeholder: "Name your discussion" %>
+  </div>
+
+  <%= fields_for @discussion.subject do |subject_fields| %>
+    <%= render "#{@discussion.subject_type.tableize}/form_fields", form: subject_fields %>
+  <% end %>
+
+  <div class='form-actions'>
+    <%= form.submit 'Discuss', class: 'btn btn-primary' %>
+  </div>
+<% end %>

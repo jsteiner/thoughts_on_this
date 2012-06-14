@@ -1,27 +1,8 @@
 Given /^I have created a discussion$/ do
   steps %{
     Given I sign in
-    And I upload an image with a name
+    And I upload an image
   }
-end
-
-Then /^I should not be prompted for my name$/ do
-  page.should have_no_css("form#new_name")
-end
-
-Then /^I should be prompted for my name$/ do
-  page.should have_css("form#new_name")
-end
-
-Given /^I visit a discussion page and enter my name$/ do
-  steps %{
-    Given I visit a discussion page
-    When I enter my name
-  }
-end
-
-When /^I submit my name and return to the discussion page$/ do
-  step %{I enter my name}
 end
 
 When /^I enter my name$/ do
@@ -37,27 +18,40 @@ Given /^I visit a discussion page$/ do
   visit discussion_path(@discussion)
 end
 
-When /^I post the message "(.*?)"$/ do |message|
-  within "#new_message" do
-    fill_in "message_content", with: message
-    click_button "Send"
+When /^I upload the text "(.*?)"$/ do |text_content|
+  within '#new_text_subject' do
+    fill_in 'discussion_name', with: 'An appropriate name'
+    fill_in 'text_subject_content', with: text_content
+    click_button 'Discuss'
   end
 end
 
-When /^Another person posts the message "(.*?)"$/ do |message|
-  Pusher[@discussion.url].trigger('new_message', { message: "<li>#{message}</li>" })
+Then /^I should see "(.*?)" on the page$/ do |text_content|
+  page.should have_content(text_content)
 end
 
-Then /^I should be able to post a message$/ do
-  page.should have_css("#new_message")
+When /^I update the text to say "(.*?)"$/ do |text_content|
+  click_link 'update'
+  fill_in 'text_subject_content', with: text_content
+  click_button 'Discuss'
 end
 
-Then /^I should not be able to post a message$/ do
-  page.should have_no_css("#new_message")
-end
-
-Then /^I should see "(.*?)" in the chat box$/ do |message|
-  within "#chat" do
-    page.should have_css("li", text: message)
+When /^I upload the image "(.*?)"$/ do |filename|
+  within '#new_image_subject' do
+    fill_in 'discussion_name', with: 'something'
+    attach_file('image_subject_image',
+                File.join(Rails.root, "features/support/#{filename}"))
+    click_button 'Discuss'
   end
+end
+
+Then /^I should see the image "(.*?)" on the page$/ do |filename|
+  page.should have_css('img', src: /#{filename}/)
+end
+
+When /^I update the image with "(.*?)"$/ do |filename|
+  click_link 'update'
+  attach_file('image_subject_image',
+              File.join(Rails.root, "features/support/#{filename}"))
+  click_button 'Discuss'
 end

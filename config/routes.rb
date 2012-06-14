@@ -3,7 +3,7 @@ Discepto::Application.routes.draw do
   resource :dashboard, only: [:show]
   resources :image_subjects, only: [:create]
   resources :text_subjects, only: [:create]
-  resources :discussions, only: [:show] do
+  resources :discussions, only: [:show, :edit, :update] do
     resources :messages, only: [:create]
     resources :names, only: [:create]
   end
