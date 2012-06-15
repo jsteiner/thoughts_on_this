@@ -5,7 +5,7 @@
     <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
   </div>
   <div class='control-group'>
-    <%= form.select :language, TextSubject.available_languages %>
+    <%= form.select :language, TextSubject::AVAILABLE_LANGUAGES %>
   </div>
   <div class='control-group'>
     <%= form.text_area :content %>
