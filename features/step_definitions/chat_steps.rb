@@ -19,7 +19,9 @@ end
 
 Then /^I should see "(.*?)" in the chat box$/ do |message|
   within "#chat" do
-    page.should have_css("li", text: message)
+    wait_until do
+      find('li', text: message)
+    end
   end
 end
 
