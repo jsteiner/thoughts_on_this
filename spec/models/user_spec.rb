@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe User do
+  it { should have_many(:discussions).dependent(:destroy) }
+  it { should allow_mass_assignment_of(:first_name) }
+  it { should allow_mass_assignment_of(:last_name) }
+
   context '#full_name' do
     it 'returns their first name and last name' do
       user = build(:user, :with_name)
