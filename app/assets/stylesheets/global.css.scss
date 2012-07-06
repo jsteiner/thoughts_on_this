@@ -1,0 +1,17 @@
+header {
+  nav {
+    background: #eee;
+    padding: 10px;
+
+    div.nav-wrap {
+    }
+
+    li.dropdown {
+      float: right;
+
+      ul.menu-content {
+        display: none;
+      }
+    }
+  }
+}

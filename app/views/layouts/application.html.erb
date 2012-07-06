@@ -5,28 +5,28 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div class='navbar navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container-fluid'>
+<body class="<%= body_class %>">
+  <header>
+    <nav>
+      <div class='nav-wrap'>
         <%= link_to 'logo', root_path, class: 'brand' %>
-        <ul class='nav pull-right'>
+        <ul class='nav'>
           <% if signed_in? %>
             <li class='dropdown'>
-              <a class='dropdown-toggle' data-toggle='dropdown' href='#'><%= current_user.email %></a>
-              <ul class='dropdown-menu'>
+              <a class='user-menu' data-toggle='dropdown' href='#'><%= current_user.email %></a>
+              <ul class='menu-content'>
                 <li><%= link_to "Sign out", sign_out_path, :method => :delete %></li>
               </ul>
             </li>
           <% else %>
             <li><%= link_to "Sign in", sign_in_path %></li>
           <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+        </ul>
+      </div> <!-- .navbar-wrap -->
+    </nav>
+  </header>
 
-  <div class='container-fluid'>
+  <div class='main-wrap'>
     <% flash.each do |key, value| -%>
       <div class="flash <%= key %>"><%= value %></div>
     <% end %>

@@ -1,0 +1,14 @@
+body.discussions {
+  div.main-wrap {
+    section.view {
+      float: left;
+      margin-left: flex-gutter();
+      width: flex-grid(8);
+    }
+
+    section.chat {
+      float: left;
+      width: flex-grid(4);
+    }
+  }
+}

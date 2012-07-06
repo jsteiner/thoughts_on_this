@@ -1,0 +1,18 @@
+body.dashboards {
+  div.main-wrap {
+    section.file {
+      float: left;
+      margin-right: flex-gutter();
+      width: flex-grid(6);
+    }
+
+    section.paste {
+      float: left;
+      width: flex-grid(6);
+    }
+
+    section.history {
+      @include clearfix;
+    }
+  }
+}
