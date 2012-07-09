@@ -54,8 +54,16 @@ body.discussions {
           @include position(fixed, 0 0px 0px flex-grid(8));
 
           textarea {
-            height: 5em;
+            height: 100px;
+            margin: 0;
+            max-height: 100px;
+            max-width: 100%;
+            padding: 5px;
             width: 100%;
+          }
+          
+          input.btn-primary {
+            display: none;
           }
         }
       }

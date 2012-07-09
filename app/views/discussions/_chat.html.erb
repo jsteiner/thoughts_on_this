@@ -16,7 +16,7 @@
       var pusher = new Pusher('acecc5ffed2935bdc2d9');
       var channel = pusher.subscribe('<%= @discussion.url %>');
       channel.bind('new_message', function(data) {
-        $("#chat").append(data.message);
+        $("#messages").append(data.message);
         if(data.user_id == '<%= current_user.id %>') {
           $("#new_message")[0].reset();
         }
