@@ -2,6 +2,7 @@
   <div class='span9'>
     <h2 data-role="discussion-name"><%= @discussion.name %></h2>
     <%= link_to 'update', edit_discussion_path(@discussion) %>
+    <p>Share this link to begin a discussion: <%= link_to discussion_url(@discussion), @discussion %></p>
     <%= render @discussion.subject %>
   </div>
 
