@@ -66,7 +66,8 @@ select {
 }
 
 button,
-input[type="submit"] {
+input[type="submit"],
+a.button {
   @include button(simple, #fafafa);
 
   // Button Overrides

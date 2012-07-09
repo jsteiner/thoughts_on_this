@@ -17,4 +17,6 @@
 /log/*.log
 /tmp
 /public/system
-.powrc
+
+# Ignore my working files
+working_files

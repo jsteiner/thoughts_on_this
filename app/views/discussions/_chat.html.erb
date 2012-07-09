@@ -35,13 +35,13 @@
     </script>
   <% end %>
 
-  <ul id="chat">
+  <ul id="messages">
     <%= render @messages %>
   </ul>
 
   <% if current_user.has_full_name? %>
     <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
-      <%= f.text_area :content, class: 'input-xlarge', rows: '3' %>
+      <%= f.text_area :content,  rows: '3' %>
       <%= f.submit "Send", class: 'btn btn-primary' %>
     <% end %>
   <% else %>

@@ -1,6 +1,6 @@
 <section class='view'>
   <h2 data-role="discussion-name"><%= @discussion.name %></h2>
-  <%= link_to 'update', edit_discussion_path(@discussion) %>
+  <%= link_to 'Update', edit_discussion_path(@discussion), class: 'button update' %>
   <%= render @discussion.subject %>
 </section>
 
