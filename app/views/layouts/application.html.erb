@@ -8,13 +8,13 @@
 <body class="<%= body_class %>">
   <header>
     <nav>
-      <div class='nav-wrap'>
-        <%= link_to 'logo', root_path, class: 'brand' %>
-        <ul class='nav'>
+      <div class="nav-wrap">
+        <%= link_to 'Discepto', root_path, class: 'brand' %>
+        <ul class="user">
           <% if signed_in? %>
-            <li class='dropdown'>
-              <a class='user-menu' data-toggle='dropdown' href='#'><%= current_user.email %></a>
-              <ul class='menu-content'>
+            <li class="dropdown">
+              <a class="user-menu" data-toggle='dropdown' href='#'><%= current_user.email %></a>
+              <ul class="menu-content">
                 <li><%= link_to "Sign out", sign_out_path, :method => :delete %></li>
               </ul>
             </li>
@@ -26,7 +26,7 @@
     </nav>
   </header>
 
-  <div class='main-wrap'>
+  <div class="main-wrap">
     <% flash.each do |key, value| -%>
       <div class="flash <%= key %>"><%= value %></div>
     <% end %>
