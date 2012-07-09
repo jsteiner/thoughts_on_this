@@ -18,4 +18,8 @@ class Guest
   def persisted?
     false
   end
+
+  def id
+    nil
+  end
 end

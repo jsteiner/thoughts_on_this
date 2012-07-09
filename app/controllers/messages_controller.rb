@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
       discussion = Discussion.find_by_url!(params[:discussion_id])
       message_params = params[:message].merge(user_name: current_user.full_name)
       @message = discussion.messages.create(message_params)
-      Pusher[discussion.url].trigger('new_message', { message: @message.render })
+      Pusher[discussion.url].trigger('new_message', { message: @message.render, user_id: current_user.id.to_s })
     end
 
     render nothing: true

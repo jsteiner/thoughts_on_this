@@ -28,4 +28,10 @@ describe Guest do
       Guest.new("a", "b").should_not be_persisted
     end
   end
+
+  context "#id" do
+    it "always returns nil" do
+      Guest.new("a", "b").id.should be_nil
+    end
+  end
 end

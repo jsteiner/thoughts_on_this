@@ -17,12 +17,14 @@
       var channel = pusher.subscribe('<%= @discussion.url %>');
       channel.bind('new_message', function(data) {
         $("#chat").append(data.message);
-        $("#new_message")[0].reset();
+        if(data.user_id == '<%= current_user.id %>') {
+          $("#new_message")[0].reset();
+        }
       });
 
       // Send on 'return'
-      $('#message_content').keypress(function(e){
-        if(e.which == 13){
+      $('#message_content').keypress(function(e) {
+        if(e.which == 13) {
           e.preventDefault();
           $('form#new_message').submit();
           return false;
