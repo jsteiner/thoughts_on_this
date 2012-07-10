@@ -22,6 +22,11 @@ Edit your .env file:
     cp sample.env .env
     vi .env # Paste in the real values
 
+If you are using pow, copy sample.powenv:
+
+    cp sample.powenv .env
+    vi .powenv # Paste in the real values
+
 Run the server with foreman to pick up on environment variables:
 
     foreman start -p 3000
