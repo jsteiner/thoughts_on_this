@@ -49,11 +49,14 @@ body.discussions-index {
 
 body.discussions-show {
   div.main-wrap {
+    min-width: $min-width;
+    @include position(fixed, $header-height 0px 0px 0px);
+
     section.view {
       background: #D3D3D3;
       @include box-sizing(border-box);
       padding: 20px flex-gutter();
-      @include position(fixed, $header-height flex-grid(8) 0px 0px);
+      @include position(absolute, 0px flex-grid(8) 0px 0px);
       width: flex-grid(8);
 
       h2 {
@@ -71,11 +74,17 @@ body.discussions-show {
           padding: 10px;
         }
       }
+
+      img {
+        border: 10px solid black;
+        @include box-shadow(1px 1px 5px rgba(0,0,0,0.5));
+        max-width: 100% - flex-gutter();
+      }
     }
 
     section.chat {
       background: #ddd;
-      @include position(fixed, $header-height 0px 0px flex-grid(8));
+      @include position(absolute, 0px 0px 0px flex-grid(8));
 
       div#chat-container {
         @include position(absolute, 0px 0px 0px 0px);
