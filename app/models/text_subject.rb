@@ -6,5 +6,5 @@ class TextSubject < ActiveRecord::Base
   AVAILABLE_LANGUAGES = %w(Bash C C# C++ CSS Django Erlang
        Go HTML HTTP Haskell JSON Java Javascript
        Markdown Nginx) + ['Objective C'] +
-       %w(PHP Perl Python Ruby SQL Scala)
+       %w(PHP Perl) + ['Plain Text'] + %w(Python Ruby SQL Scala)
 end
