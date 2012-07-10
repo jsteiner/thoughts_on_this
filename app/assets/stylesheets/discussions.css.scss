@@ -1,5 +1,54 @@
 body.discussions {
   div.main-wrap {
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+body.discussions-index {
+  div.main-wrap {
+    padding: 20px;
+
+    ul#discussions {
+      li {
+        background: #bbb;
+        @include clearfix;
+        font-size: 18px;
+        list-style: none;
+        margin-bottom: 20px;
+        $time-width: 200px;
+
+        time {
+          color: #fff;
+          float: left;
+          padding: 10px;
+          text-align: right;
+          width: $time-width;
+        }
+
+        a {
+          background: #ddd;
+          border-left: 3px solid #777;
+          color: #333;
+          display: block;
+          padding: 10px;
+          margin-left: $time-width + 20px;
+          min-height: 100%;
+          text-decoration: none;
+
+          &:hover {
+            background: #eee;
+          }
+        }
+
+      }
+    }
+  }
+} // body.discussions-index
+
+body.discussions-show {
+  div.main-wrap {
     section.view {
       background: #D3D3D3;
       @include box-sizing(border-box);
@@ -9,7 +58,6 @@ body.discussions {
 
       h2 {
         color: #333;
-        margin-bottom: 10px;
       }
 
       pre {
