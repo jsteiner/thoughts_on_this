@@ -1,7 +1,7 @@
 When /^I post the message "(.*?)"$/ do |message|
   within "#new_message" do
     fill_in "message_content", with: message
-    click_button "Send"
+    find('#message_content').native.send_key(:return)
   end
 end
 

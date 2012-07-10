@@ -42,7 +42,6 @@
   <% if current_user.has_full_name? %>
     <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
       <%= f.text_area :content,  rows: '3' %>
-      <%= f.submit "Send", class: 'btn btn-primary' %>
     <% end %>
   <% else %>
     <p>
@@ -58,7 +57,7 @@
         <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
       </div>
       <div class='form-actions'>
-        <%= submit_tag 'Join discussion', class: 'btn btn-primary' %>
+        <%= submit_tag 'Join discussion' %>
       </div>
     <% end %>
   <% end %>
