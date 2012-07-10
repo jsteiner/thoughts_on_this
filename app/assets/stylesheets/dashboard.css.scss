@@ -1,0 +1,53 @@
+body.dashboards {
+  div.main-wrap {
+    min-height: 100%;
+    min-width: $min-width;
+    @include position(fixed,  $header-height 0px 0px 0px);
+
+    div.section-wrap {
+      margin: 0 auto;
+      padding-top: 80px;
+      width: 300px;
+
+      h2 {
+        margin-bottom: 12px;
+      }
+
+      .field {
+        margin-bottom: 12px;
+
+        input {
+          margin: 0;
+        }
+      }
+    } // div.section-wrap
+
+    section.file {
+      border-right: 1px solid #bbb;
+      @include position(absolute, 0px 50% 0px 0px);
+    }
+
+    section.paste {
+      @include position(absolute, 0px 0px 0px 50%);
+    }
+
+    section.history {
+      display: none;
+      @include clearfix;
+    }
+
+    div.or {
+      background: #fff;
+      margin-right: -35px;
+      padding: 10px;
+      @include position(absolute, 64px 50% 0 0);
+      width: 50px;
+
+      h3 {
+        color: #ddd;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+  } // div.main-wrap
+} // body.dashboards

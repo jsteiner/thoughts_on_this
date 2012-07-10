@@ -17,3 +17,6 @@
 /log/*.log
 /tmp
 /public/system
+
+# Ignore my working files
+working_files

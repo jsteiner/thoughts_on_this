@@ -31,7 +31,7 @@ Then /^I should see "(.*?)" on the page$/ do |text_content|
 end
 
 When /^I update the text to say "(.*?)"$/ do |text_content|
-  click_link 'update'
+  click_link 'Update'
   fill_in 'text_subject_content', with: text_content
   click_button 'Discuss'
 end
@@ -50,7 +50,7 @@ Then /^I should see the image "(.*?)" on the page$/ do |filename|
 end
 
 When /^I update the image with "(.*?)"$/ do |filename|
-  click_link 'update'
+  click_link 'Update'
   attach_file('image_subject_image',
               File.join(Rails.root, "features/support/#{filename}"))
   click_button 'Discuss'

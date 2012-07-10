@@ -1,7 +1,7 @@
 When /^I post the message "(.*?)"$/ do |message|
   within "#new_message" do
     fill_in "message_content", with: message
-    click_button "Send"
+    find('#message_content').native.send_key(:return)
   end
 end
 
@@ -18,7 +18,7 @@ Then /^I should not be able to post a message$/ do
 end
 
 Then /^I should see "(.*?)" in the chat box$/ do |message|
-  within "#chat" do
+  within "#messages" do
     wait_until do
       find('li', text: message)
     end
