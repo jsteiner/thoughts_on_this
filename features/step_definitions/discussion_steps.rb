@@ -30,12 +30,6 @@ Then /^I should see "(.*?)" on the page$/ do |text_content|
   page.should have_content(text_content)
 end
 
-When /^I update the text to say "(.*?)"$/ do |text_content|
-  click_link 'Update'
-  fill_in 'text_subject_content', with: text_content
-  click_button 'Discuss'
-end
-
 When /^I upload the image "(.*?)"$/ do |filename|
   within '#new_image_subject' do
     fill_in 'discussion_name', with: 'something'
@@ -47,11 +41,4 @@ end
 
 Then /^I should see the image "(.*?)" on the page$/ do |filename|
   page.should have_css('img', src: /#{filename}/)
-end
-
-When /^I update the image with "(.*?)"$/ do |filename|
-  click_link 'Update'
-  attach_file('image_subject_image',
-              File.join(Rails.root, "features/support/#{filename}"))
-  click_button 'Discuss'
 end

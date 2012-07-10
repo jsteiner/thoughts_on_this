@@ -5,6 +5,18 @@ describe User do
   it { should allow_mass_assignment_of(:first_name) }
   it { should allow_mass_assignment_of(:last_name) }
 
+  context '#discussion_timeline' do
+    it 'returns their discussions with most recently updated first' do
+      user = create(:user)
+      oldest_discussion = create(:discussion, :text, user: user)
+      middle_discussion = create(:discussion, :text, user: user)
+      newest_discussion = create(:discussion, :text, user: user)
+
+      middle_discussion.touch
+      user.discussion_timeline.should == [middle_discussion, newest_discussion, oldest_discussion]
+    end
+  end
+
   context '#full_name' do
     it 'returns their first name and last name' do
       user = build(:user, :with_name)
@@ -32,7 +44,7 @@ describe User do
   context '#destroy' do
     it "also destroys the user's discussions" do
       user = create(:user)
-      discussion = create(:discussion, :image, user: user)
+      discussion = create(:discussion, :text, user: user)
       Discussion.all.should have(1).item
       user.destroy
       Discussion.all.should have(0).items

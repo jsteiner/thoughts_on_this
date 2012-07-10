@@ -6,7 +6,7 @@ describe Discussion do
 
   context '#generate_unique_url' do
     it 'does not change the url on update' do
-      discussion = create(:discussion, :image)
+      discussion = create(:discussion, :text)
       url = discussion.url
       discussion.name = "New name"
       discussion.save
@@ -16,7 +16,7 @@ describe Discussion do
 
   context '#ordered_messages' do
     it 'returns messages in chronological order' do
-      discussion = create(:discussion, :image)
+      discussion = create(:discussion, :text)
       oldest_message = create(:message)
       newest_message = create(:message)
       discussion.messages << oldest_message
@@ -27,7 +27,7 @@ describe Discussion do
 
   context '#destroy' do
     it "also destroys the discussion's messages" do
-      discussion = create(:discussion, :image)
+      discussion = create(:discussion, :text)
       message = create(:message, discussion: discussion)
       Message.all.should have(1).item
       discussion.destroy
