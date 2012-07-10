@@ -2,7 +2,7 @@
   <h2>Your Discussions</h2>
   <ul id="discussions">
     <% @discussions.each do |discussion| %>
-      <li><time><%= time_ago_in_words(discussion.created_at) %> ago</time><%= link_to discussion.name, discussion %></li>
+    <li><time><%= time_ago_in_words(discussion.updated_at) %> ago</time><%= link_to discussion.name, discussion %></li>
     <% end %>
   </ul>
 </section>

@@ -12,24 +12,27 @@ body.discussions-index {
 
     ul#discussions {
       li {
+        @include clearfix;
         font-size: 18px;
         list-style: none;
         margin-bottom: 20px;
+        $time-width: 200px;
 
         time {
           background: #bbb;
+          border-right: 3px solid #999;
           color: #fff;
-          display: inline-block;
           float: left;
           padding: 10px;
           text-align: right;
-          width: 120px;
+          width: $time-width;
         }
 
         a {
           background: #ddd;
           color: #333;
-          display: inline-block;
+          float: left;
+          display: block;
           padding: 10px;
           text-decoration: none;
 
