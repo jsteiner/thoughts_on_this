@@ -12,6 +12,7 @@ body.discussions-index {
 
     ul#discussions {
       li {
+        background: #bbb;
         @include clearfix;
         font-size: 18px;
         list-style: none;
@@ -19,8 +20,6 @@ body.discussions-index {
         $time-width: 200px;
 
         time {
-          background: #bbb;
-          border-right: 3px solid #999;
           color: #fff;
           float: left;
           padding: 10px;
@@ -30,10 +29,12 @@ body.discussions-index {
 
         a {
           background: #ddd;
+          border-left: 3px solid #777;
           color: #333;
-          float: left;
           display: block;
           padding: 10px;
+          margin-left: $time-width + 20px;
+          min-height: 100%;
           text-decoration: none;
 
           &:hover {
