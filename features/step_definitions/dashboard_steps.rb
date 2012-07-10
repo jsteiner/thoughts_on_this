@@ -54,10 +54,3 @@ Then /^I should see the image and title on the page$/ do
   page.should have_css("img[alt=subject]")
   page.should have_css("[data-role='discussion-name']")
 end
-
-Then /^I should see the discussion in my list of discussions$/ do
-  discussion = Discussion.last
-  within 'ul#discussions' do
-    page.should have_css("li a[href='#{discussion_path(discussion)}']", text: discussion.name)
-  end
-end

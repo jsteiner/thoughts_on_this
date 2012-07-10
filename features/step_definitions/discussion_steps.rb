@@ -42,3 +42,11 @@ end
 Then /^I should see the image "(.*?)" on the page$/ do |filename|
   page.should have_css('img', src: /#{filename}/)
 end
+
+Then /^I should see the discussion in my list of discussions$/ do
+  visit discussions_url
+  discussion = Discussion.last
+  within 'ul#discussions' do
+    page.should have_css("li a[href='#{discussion_path(discussion)}']", text: discussion.name)
+  end
+end
