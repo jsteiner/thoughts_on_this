@@ -1,4 +1,8 @@
 class DiscussionsController < ApplicationController
+  def index
+    @discussions = current_user.discussion_timeline
+  end
+
   def show
     @discussion = Discussion.find_by_url!(params[:id])
     @message = Message.new

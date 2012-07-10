@@ -1,5 +1,50 @@
 body.discussions {
   div.main-wrap {
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+body.discussions-index {
+  div.main-wrap {
+    padding: 20px;
+
+    ul#discussions {
+      li {
+        font-size: 18px;
+        list-style: none;
+        margin-bottom: 20px;
+
+        time {
+          background: #bbb;
+          color: #fff;
+          display: inline-block;
+          float: left;
+          padding: 10px;
+          text-align: right;
+          width: 120px;
+        }
+
+        a {
+          background: #ddd;
+          color: #333;
+          display: inline-block;
+          padding: 10px;
+          text-decoration: none;
+
+          &:hover {
+            background: #eee;
+          }
+        }
+
+      }
+    }
+  }
+} // body.discussions-index
+
+body.discussions-show {
+  div.main-wrap {
     section.view {
       background: #D3D3D3;
       @include box-sizing(border-box);
@@ -9,7 +54,6 @@ body.discussions {
 
       h2 {
         color: #333;
-        margin-bottom: 10px;
       }
 
       pre {

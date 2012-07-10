@@ -31,11 +31,6 @@ body.dashboards {
       @include position(absolute, 0px 0px 0px 50%);
     }
 
-    section.history {
-      display: none;
-      @include clearfix;
-    }
-
     div.or {
       background: #fff;
       margin-right: -35px;
