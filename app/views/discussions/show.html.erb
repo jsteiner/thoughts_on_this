@@ -1,6 +1,6 @@
 <section class='view'>
   <h2 data-role="discussion-name"><%= @discussion.name %></h2>
-  <%= link_to 'Update', edit_discussion_path(@discussion), class: 'button update' %>
+  <p class="share">Share this link to begin a discussion: <%= link_to discussion_url(@discussion), @discussion %></p>
   <%= render @discussion.subject %>
 </section>
 

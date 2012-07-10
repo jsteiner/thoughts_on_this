@@ -16,8 +16,8 @@ body.discussions {
         $adjusted-flex-gutter: flex-gutter() * 1.5; // to compensate for the fact that it's inside a flex-grid(8) box
         margin: 20px 0 0 0;
         overflow: scroll;
-        @include position(absolute, 80px $adjusted-flex-gutter 20px $adjusted-flex-gutter);
-        
+        @include position(absolute, 70px $adjusted-flex-gutter 20px $adjusted-flex-gutter);
+
         code {
           margin: 0;
           padding: 10px;
@@ -61,7 +61,7 @@ body.discussions {
             padding: 5px;
             width: 100%;
           }
-          
+
           input.btn-primary {
             display: none;
           }

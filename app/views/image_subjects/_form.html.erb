@@ -1,13 +1,13 @@
 <%= form_for @image_subject do |form| %>
   <%= render "shared/error_messages", :object => @image_subject %>
 
-  <div class='control-group'>
+  <div class='field'>
     <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
   </div>
-  <div class='control-group'>
+  <div class='field'>
     <%= form.file_field :image %>
   </div>
-  <div class='form-actions'>
+  <div class='action'>
     <%= form.submit 'Discuss', class: 'btn btn-primary' %>
   </div>
 <% end %>

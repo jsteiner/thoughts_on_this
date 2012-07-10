@@ -18,7 +18,7 @@ Then /^I should not be able to post a message$/ do
 end
 
 Then /^I should see "(.*?)" in the chat box$/ do |message|
-  within "#chat" do
+  within "#messages" do
     wait_until do
       find('li', text: message)
     end
