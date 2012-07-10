@@ -12,6 +12,8 @@ FactoryGirl.define do
     trait :text do
       association :subject, factory: :text_subject
     end
+
+    factory :text_discussion, traits: [:text]
   end
 
   factory :image_subject do
@@ -23,5 +25,6 @@ FactoryGirl.define do
 
   factory :message do
     content 'Hello World!'
+    association :discussion, factory: :text_discussion
   end
 end

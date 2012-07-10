@@ -23,6 +23,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'bourne'
 end
 
 group :assets do
