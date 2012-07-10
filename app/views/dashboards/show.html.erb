@@ -11,12 +11,3 @@
   </div>
 </section>
 <div class="or"><h3>OR</h3></div>
-
-<section class='history'>
-  <h2>Your Discussions</h2>
-  <ul id="discussions">
-    <% @discussions.each do |discussion| %>
-      <li><%= link_to discussion.name, discussion %> <%= time_ago_in_words(discussion.created_at) %> ago</li>
-    <% end %>
-  </ul>
-</section>
