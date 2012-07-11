@@ -41,7 +41,6 @@ body.discussions-index {
             background: #eee;
           }
         }
-
       }
     }
   }
@@ -109,6 +108,10 @@ body.discussions-show {
           background: #eee;
           padding: 10px;
           @include position(fixed, 0 0px 0px flex-grid(8));
+
+          @media screen and (max-width: 1000px) {
+            left: 660px;
+          }
 
           textarea {
             height: 100px;
