@@ -1,5 +1,6 @@
 class PagesController < HighVoltage::PagesController
   before_filter :redirect_to_dashboard
+  layout 'basic'
 
   private
 
