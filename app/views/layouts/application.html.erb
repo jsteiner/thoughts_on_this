@@ -12,9 +12,11 @@
         <%= link_to 'Discepto', root_path, class: 'brand' %>
         <ul class="user">
           <% if signed_in? %>
+          <li><%= link_to 'New Discussion', dashboard_path %></li>
             <li class="dropdown">
               <a class="user-menu" href='#'><%= current_user.email %></a>
               <ul class="menu-content">
+                <li><%= link_to "Your Discussions", discussions_path %></li>
                 <li><%= link_to "Sign out", sign_out_path, :method => :delete %></li>
               </ul>
             </li>
