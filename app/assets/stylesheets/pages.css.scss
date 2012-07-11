@@ -1,0 +1,69 @@
+$top-space: 200px;
+
+body.pages-show {
+  div.main-wrap {
+    margin-top: $top-space;
+
+    h1 {
+      color: #444;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    p {
+      color: #999;
+      font-style: italic;
+      text-align: center;
+    }
+
+    section.call-to-action {
+      margin-top: 100px;
+      text-align: center;
+
+      a {
+        @include button;
+        font-size: $font-size-base;
+        margin-left: 20px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+body.clearance-sessions-new, body.clearance-users-new, body.clearance-passwords-new {
+  div.main-wrap {
+    margin: $top-space auto 0;
+    width: 300px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-top: 20px;
+
+      li {
+        display: inline;
+        list-style: none;
+        margin-right: 10px;
+
+        a {
+          color: #777;
+
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    p {
+      color: #777;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  } // div.main-wrap
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discepto</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+
+  <div class="main-wrap">
+    <%= yield %>
+  </div>
+
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascript %>
+</body>
+</html>
