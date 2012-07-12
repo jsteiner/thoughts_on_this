@@ -2,44 +2,9 @@
 
   <% content_for :javascript do %>
     <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $('#chat-container').scrollTop($('#messages').height());
-
-      <% if Rails.env.development? %>
-        // Enable pusher logging - don't include this in production
-        Pusher.log = function(message) {
-          if (window.console && window.console.log) window.console.log(message);
-        };
-
-        // Flash fallback logging - don't include this in production
-        WEB_SOCKET_DEBUG = true;
-      <% end %>
-
-      var pusher = new Pusher('acecc5ffed2935bdc2d9');
-      var channel = pusher.subscribe('<%= @discussion.url %>');
-      channel.bind('new_message', function(data) {
-        $("#messages").append(data.message);
-        if(data.user_id == '<%= current_user.id %>') {
-          $("#new_message")[0].reset();
-        }
-
-        var chat = document.getElementById('chat-container');
-        if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
-          chat.scrollTop = chat.scrollHeight;
-        }
-      });
-
-      // Send on 'return'
-      $('#message_content').keypress(function(e) {
-        if(e.which == 13) {
-          e.preventDefault();
-          if(!$('#message_content').val().match(/^\s*$/)) {
-            $('form#new_message').submit();
-          }
-          return false;
-        }
-      });
-    </script>
+    <%= tag :meta, name: 'discussion_url', content: @discussion.url %>
+    <%= tag :meta, name: 'current_user_id', content: current_user.id %>
+    <%= javascript_include_tag :chat %>
   <% end %>
 
   <ul id="messages">
