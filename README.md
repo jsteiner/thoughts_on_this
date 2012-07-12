@@ -27,6 +27,8 @@ If you are using pow, copy sample.powenv:
     cp sample.powenv .env
     vi .powenv # Paste in the real values
 
+Note that chat functionality will not work without the Pusher environment variables being loaded.
+
 Run the server with foreman to pick up on environment variables:
 
     foreman start -p 3000
