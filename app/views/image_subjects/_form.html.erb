@@ -5,7 +5,10 @@
     <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>
   </div>
   <div class='field'>
-    <%= form.file_field :image %>
+    <label class="file">
+      Upload a file
+      <%= form.file_field :image %>
+    </label>
   </div>
   <div class='action'>
     <%= form.submit 'Discuss', class: 'btn btn-primary' %>
