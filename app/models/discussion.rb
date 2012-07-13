@@ -27,6 +27,14 @@ class Discussion < ActiveRecord::Base
     messages.order('created_at ASC')
   end
 
+  def user_names
+    ordered_messages.map(&:user_name).uniq
+  end
+
+  def user_number(user_name)
+    user_names.index(user_name)
+  end
+
   private
 
   def generate_unique_url
@@ -39,6 +47,6 @@ class Discussion < ActiveRecord::Base
 
   def with_subject_errors
     errors.messages.delete(:subject)
-    errors.merge! subject.errors
+    errors.merge!(subject.errors) if subject.present?
   end
 end

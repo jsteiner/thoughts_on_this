@@ -25,6 +25,25 @@ describe Discussion do
     end
   end
 
+  context '#user_names' do
+    it 'returns a unique array of user_names in the correct order' do
+      discussion = create(:discussion, :text)
+      first_message = create(:message, user_name: 'Peter Parker', discussion: discussion)
+      second_message = create(:message, user_name: 'Bruce Banner', discussion: discussion)
+      third_message = create(:message, user_name: 'Scott Summers', discussion: discussion)
+      duplicate_user_message = create(:message, user_name: 'Bruce Banner', discussion: discussion)
+      discussion.user_names.should == ['Peter Parker', 'Bruce Banner', 'Scott Summers']
+    end
+  end
+
+  context '#user_number' do
+    it 'returns the index of the user name' do
+      discussion = create(:discussion, :text)
+      discussion.stubs(:user_names).returns(['Peter Parker', 'Bruce Banner', 'Scott Summers'])
+      discussion.user_number('Bruce Banner').should == 1
+    end
+  end
+
   context '#destroy' do
     it "also destroys the discussion's messages" do
       discussion = create(:discussion, :text)

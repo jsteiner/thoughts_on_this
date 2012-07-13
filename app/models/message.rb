@@ -7,6 +7,10 @@ class Message < ActiveRecord::Base
 
   after_create :touch_discussion
 
+  def user_number
+    discussion.user_number(user_name) + 1
+  end
+
   private
 
   def touch_discussion
