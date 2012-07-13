@@ -7,7 +7,7 @@ describe User do
 
   context '#discussion_timeline' do
     it 'returns their discussions with most recently updated first' do
-      user = create(:user)
+      user = build_stubbed(:user)
       oldest_discussion = create(:discussion, :text, user: user)
       middle_discussion = create(:discussion, :text, user: user)
       newest_discussion = create(:discussion, :text, user: user)
@@ -38,16 +38,6 @@ describe User do
     it 'returns false if the user does not have a name' do
       user = build(:user)
       user.has_full_name?.should be_false
-    end
-  end
-
-  context '#destroy' do
-    it "also destroys the user's discussions" do
-      user = create(:user)
-      discussion = create(:discussion, :text, user: user)
-      Discussion.all.should have(1).item
-      user.destroy
-      Discussion.all.should have(0).items
     end
   end
 end
