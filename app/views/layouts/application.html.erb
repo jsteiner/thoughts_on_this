@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Discepto</title>
+  <title>Thoughts on This</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
@@ -9,7 +9,7 @@
   <header>
     <nav>
       <div class="nav-wrap">
-        <%= link_to 'Discepto', root_path, class: 'brand' %>
+        <%= link_to 'Thoughts on This', root_path, class: 'brand' %>
         <ul class="user">
           <% if signed_in? %>
           <li><%= link_to 'New Discussion', dashboard_path %></li>

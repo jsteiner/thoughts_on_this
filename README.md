@@ -1,5 +1,5 @@
-Discepto
-========
+Thoughts on This
+================
 
 Share and discuss creative work, including images, code, and plain text.
 
@@ -8,11 +8,11 @@ Setup
 
 Clone the repo:
 
-    git clone git@github.com:jsteiner/discepto.git
+    git clone git@github.com:jsteiner/thoughts_on_this.git
 
 Set up the app:
 
-    cd discepto
+    cd thoughts_on_this
     bundle
     rake db:create
     rake db:migrate

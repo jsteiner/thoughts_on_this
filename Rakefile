@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Discepto::Application.load_tasks
+ThoughtsOnThis::Application.load_tasks
