@@ -6,7 +6,8 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 pre code {
   display: block;
-  background: #002b36; color: #839496;
+  background: $bg-shade-1;
+  color: $bg-shade-7;
 }
 
 pre .comment,
@@ -16,7 +17,7 @@ pre .doctype,
 pre .pi,
 pre .lisp .string,
 pre .javadoc {
-  color: #586e75;
+  color: $bg-shade-6;
   font-style: italic;
 }
 
@@ -28,7 +29,7 @@ pre .css .tag,
 pre .request,
 pre .status,
 pre .nginx .title {
-  color: #859900;
+  color: $bright-color-5;
 }
 
 pre .number,
@@ -39,7 +40,7 @@ pre .phpdoc,
 pre .tex .formula,
 pre .regexp,
 pre .hexcolor {
-  color: #2aa198;
+  color: $bright-color-6;
 }
 
 pre .title,
@@ -52,7 +53,7 @@ pre .identifier,
 pre .title .keymethods,
 pre .vhdl .literal,
 pre .id {
-  color: #268bd2;
+  color: $bright-color-4;
 }
 
 pre .attribute,
@@ -64,7 +65,7 @@ pre .constant,
 pre .class .title,
 pre .parent,
 pre .haskell .type {
-  color: #b58900;
+  color: $bright-color-3;
 }
 
 pre .preprocessor,
@@ -78,13 +79,13 @@ pre .attr_selector,
 pre .important,
 pre .subst,
 pre .cdata {
-  color: #cb4b16;
+  color: $bright-color-2;
 }
 
 pre .deletion {
-  color: #dc322f;
+  color: $bright-color-1;
 }
 
 pre .tex .formula {
-  background: #073642;
+  background: $bright-color-7;
 }

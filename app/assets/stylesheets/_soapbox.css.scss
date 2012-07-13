@@ -4,7 +4,6 @@
 $form-border-color:       #ccc;
 $form-border-color-hover: #aaa;
 $form-border-color-focus: #56B4EF; //blue default
-$form-border-radius:      3px;
 $form-box-shadow-focus:   darken($form-border-color-focus, 5%);
 $form-font-size:          12px;
 $form-font-family:        $lucida-grande;
@@ -18,26 +17,34 @@ select {
   font-size: $form-font-size;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 textarea,
 #{$all-text-inputs} {
-  background-color: white;
-  border: 1px solid $form-border-color;
-  border-radius: $form-border-radius;
-  box-shadow: inset 0px 1px 3px hsla(0, 0%, 0%, 0.06);
+  background-color: $bg-shade-2;
+  border: none;
   @include box-sizing(border-box);
-  margin-bottom: 0.5em;
+  margin: 0;
   padding: 0.7em 0.45em;
   @include transition(border-color);
   width: 300px;
 
   &:hover {
-    border-color: $form-border-color-hover;
   }
 
   &:focus {
-    border-color: $form-border-color-focus;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 0 5px rgba($form-box-shadow-focus, 0.7);
+    background: $bg-shade-1;
     outline: none;
+    &::-webkit-input-placeholder {
+      color: $bg-shade-6;
+    }
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder {
+    color: $bg-shade-5;
   }
 }
 
@@ -49,7 +56,6 @@ input[type="search"] {
 input[type="color"] {
   background-color: transparent;
   border: 0;
-  box-shadow: none;
   height: 3em;
   padding: 0;
   position: relative;
@@ -63,16 +69,35 @@ input[type="checkbox"], input[type="radio"] {
 
 select {
   width: 300px;
+
+  &:hover {
+    background: lighten($bg-button, 10%) url('/assets/select.png') no-repeat 280px 8px;
+  }
+
+  &:focus {
+    background: lighten($bg-button, 10%) url('/assets/select.png') no-repeat 280px 8px;
+    outline: none;
+  }
 }
 
 button,
 input[type="submit"],
 a.button {
-  @include button(simple, #fafafa);
+  color: $text-color;
+  background: $bg-button;
+  border: none;
+  border-top: $side-color-border-width solid transparent;
+  font-size: $font-size-base;
+  margin-top: 24px;
+  padding: .4em 1em;
 
-  // Button Overrides
-  border-color: #BBB;
-  @include box-shadow(0 1px 1px hsla(0, 0%, 0%, 0.06));
-  font-size: $form-font-size;
-  padding: 0.7em 1.9em;
+  &:hover {
+    background: $bg-shade-1;
+  }
+
+  &:focus {
+    background: $bg-shade-1;
+    outline: none;
+  }
+
 }

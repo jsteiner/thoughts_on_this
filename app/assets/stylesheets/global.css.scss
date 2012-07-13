@@ -1,17 +1,23 @@
+html, body {
+  height: 100%;
+}
+
 body {
+  background: $bg-color;
+  color: $text-color;
   min-width: $min-width;
 
   a,
   a:link,
   a:visited {
-    color: #333;
+    color: $bg-shade-7;
   }
 }
 
 header {
   nav {
-    background: #eee;
-    padding: 10px;
+    background: $bg-nav;
+    height: $header-height;
 
     div.nav-wrap {
       position: relative;
@@ -21,16 +27,17 @@ header {
         text-decoration: none;
 
         &.brand {
-          color: #555;
+          color: $bg-shade-7;
           font-size: $font-size-huge;
           font-style: italic;
           font-weight: bold;
           letter-spacing: -.05em;
+          @include position(absolute, 8px 0 0 20px);
         }
       }
 
       ul.user {
-        @include position(absolute, 3px 15px 0 0);
+        @include position(absolute, 0px 15px 0 0);
 
         a.user-menu {
           display: block;
@@ -39,46 +46,57 @@ header {
           position: relative;
 
           &::before {
-            border-color: #333 transparent transparent transparent;
+            border-color: $bg-shade-7 transparent transparent transparent;
             border-style: solid;
             border-width: 4px;
             content: "";
             height: 0;
-            @include position(absolute, 8px 5px 0 0);
+            @include position(absolute, 23px 5px 0 0);
             width: 0;
           }
         }
 
         > li {
           display: inline-block;
+          line-height: inherit;
           margin-left: 10px;
 
           > a {
-            border: 1px solid transparent;
-            border-radius: 4px;
-            padding: 2px 5px;
-            @include transition(all 0.2s ease-in-out);
+            display: block;
+            padding: 18px 5px;
 
             &:hover {
-              border-color: #bbb;
-              @include linear-gradient(white, #eee);
+              background: $bg-shade-1;
             }
           }
         }
 
         ul.menu-content {
-          background: #ddd;
-          @include box-shadow(1px 1px 5px rgba(0,0,0,0.5));
           display: none;
           margin: 0;
-          @include position(absolute, 29px 0px 0 0);
+          @include position(absolute, $header-height 0px 0 0);
 
-          li a {
-            display: block;
-            padding: 5px 10px;
+          li {
+            background: $bg-shade-3;
+            margin-top: 3px;
 
-            &:hover {
-              background: white;
+            a {
+              border-left: $side-color-border-width solid transparent;
+              display: block;
+              padding: 8px 15px;
+
+              &:hover {
+                background: $bg-shade-2;
+                color: $black;
+              }
+            
+              &.your-discussions {
+                border-color: $bright-color-3;
+              }
+            
+              &.sign-out {
+                border-color: $bright-color-1;
+              }
             }
           }
         }

@@ -5,13 +5,13 @@ body.pages-show {
     margin-top: $top-space;
 
     h1 {
-      color: #444;
+      color: $bg-shade-7;
       font-size: 60px;
       text-align: center;
     }
 
     p {
-      color: #999;
+      color: $bg-shade-6;
       font-style: italic;
       text-align: center;
     }
@@ -21,24 +21,55 @@ body.pages-show {
       text-align: center;
 
       a {
-        @include button;
         font-size: $font-size-base;
         margin-left: 20px;
+        text-decoration: none;
 
         &:first-child {
           margin-left: 0;
+        }
+
+        &.sign-up {
+          border-color: $bright-color-4;
+        }
+
+        &.sign-in {
+          border-color: $bright-color-5;
         }
       }
     }
   }
 }
 
+body.clearance-users-new {
+  input[type=submit] {
+    border-color: $bright-color-4;
+  }
+}
+
+body.clearance-sessions-new {
+  input[type=submit] {
+    border-color: $bright-color-5;
+  }
+}
+
+body.clearance-passwords-new {
+  input[type=submit] {
+    border-color: $bright-color-7;
+  }
+}
+
 body.clearance-sessions-new, body.clearance-users-new, body.clearance-passwords-new {
+  background-color: $bg-color;
+
   div.main-wrap {
+
     margin: $top-space auto 0;
+    padding: 20px;
     width: 300px;
 
     h2 {
+      color: $bg-shade-7;
       margin-bottom: 20px;
     }
 
@@ -51,17 +82,18 @@ body.clearance-sessions-new, body.clearance-users-new, body.clearance-passwords-
         margin-right: 10px;
 
         a {
-          color: #777;
+          border-radius: 3px;
+          color: $bg-shade-7;
 
           &:hover {
-            color: #000;
+            color: $grey;
           }
         }
       }
     }
 
     p {
-      color: #777;
+      color: $bg-shade-6;
       text-align: left;
       margin-bottom: 20px;
     }

@@ -12,7 +12,7 @@ body.discussions-index {
 
     ul#discussions {
       li {
-        background: #bbb;
+        background: $bg-shade-4;
         @include clearfix;
         font-size: 18px;
         list-style: none;
@@ -20,7 +20,7 @@ body.discussions-index {
         $time-width: 200px;
 
         time {
-          color: #fff;
+          color: $black;
           float: left;
           padding: 10px;
           text-align: right;
@@ -28,9 +28,9 @@ body.discussions-index {
         }
 
         a {
-          background: #ddd;
-          border-left: 3px solid #777;
-          color: #333;
+          background: $bg-shade-2;
+          border-left: $side-color-border-width solid $bg-shade-7;
+          color: $black;
           display: block;
           padding: 10px;
           margin-left: $time-width + 20px;
@@ -38,9 +38,17 @@ body.discussions-index {
           text-decoration: none;
 
           &:hover {
-            background: #eee;
+            background: $bg-shade-3;
           }
         }
+
+        &:nth-child(1) a { border-color: $bright-color-1; }
+        &:nth-child(2) a { border-color: $bright-color-2; }
+        &:nth-child(3) a { border-color: $bright-color-3; }
+        &:nth-child(4) a { border-color: $bright-color-4; }
+        &:nth-child(5) a { border-color: $bright-color-5; }
+        &:nth-child(6) a { border-color: $bright-color-6; }
+        &:nth-child(7) a { border-color: $bright-color-7; }
       }
     }
   }
@@ -52,17 +60,24 @@ body.discussions-show {
     @include position(fixed, $header-height 0px 0px 0px);
 
     section.view {
-      background: #D3D3D3;
+      background: $bg-shade-8;
       @include box-sizing(border-box);
+      color: $bg-shade-2;
       padding: 20px flex-gutter();
       @include position(absolute, 0px flex-grid(8) 0px 0px);
       width: flex-grid(8);
 
       h2 {
-        color: #333;
+        color: $bg-shade-2;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+
+      p.share {
+        a {
+          color: $bg-shade-2;
+        }
       }
 
       pre {
@@ -72,44 +87,66 @@ body.discussions-show {
         @include position(absolute, 70px $adjusted-flex-gutter 20px $adjusted-flex-gutter);
 
         code {
+          font-size: $font-size-med;
           margin: 0;
-          padding: 10px;
+          padding: 20px;
         }
       }
 
       img {
-        border: 10px solid black;
-        @include box-shadow(1px 1px 5px rgba(0,0,0,0.5));
         max-width: 100% - flex-gutter();
       }
     }
 
     section.chat {
-      background: #ddd;
+      background: $bg-shade-1;
       @include position(absolute, 0px 0px 0px flex-grid(8));
 
       div#chat-container {
+        $textarea-height: 120px;
+
         @include position(absolute, 0px 0px 0px 0px);
         overflow: scroll;
 
         ul#messages {
           list-style: none;
           margin: 0;
-          padding: 10px;
-          padding-bottom: 126px;
+          padding: 10px 10px 10px 0;
+          padding-bottom: $textarea-height + 10px;
 
           li {
+            $name-width: 90px;
+            $padding: 3px;
+
             border-radius: 4px;
-            color: #333;
+            clear: both;
+            color: $black;
             margin: 3px 0 0 0;
-            padding: 1px 5px;
-            text-shadow: 0px 1px white;
+            padding: 1px 5px 1px 0px;
+
+            strong {
+              background-color: $bright-color-2;
+              color: $black;
+              display: block;
+              float: left;
+              font-size: $font-size-small;
+              overflow: hidden;
+              padding: $padding;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: $name-width;
+            }
+
+            span {
+              display: block;
+              margin-left: $name-width + 10px;
+              padding-top: $padding;
+            }
           }
         }
 
         form {
-          background: #eee;
-          padding: 10px;
+          line-height: 0;
           @include position(fixed, 0 0px 0px flex-grid(8));
 
           @media screen and (max-width: 1000px) {
@@ -117,11 +154,13 @@ body.discussions-show {
           }
 
           textarea {
-            height: 100px;
+            background: $bg-shade-2;
+            border-top: $side-color-border-width solid $bright-color-1;
+            height: $textarea-height;
             margin: 0;
-            max-height: 100px;
+            max-height: $textarea-height;
             max-width: 100%;
-            padding: 5px;
+            padding: 10px 20px 10px 10px;
             width: 100%;
           }
         }

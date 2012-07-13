@@ -5,23 +5,51 @@ body.dashboards {
     @include position(fixed, $header-height 0px 0px 0px);
 
     div.section-wrap {
+
       h2 {
+        color: $black;
         margin-bottom: 12px;
       }
 
-      .field {
+      div.field {
+        line-height: 0;
         margin-bottom: 12px;
+      }
+    } // div.section-wrap
 
+    section.file {
+      border-right: 1px solid $bg-shade-4;
+      @include position(absolute, 0px 50% 0px 0px);
+
+      div.drop {
+        border: 5px dashed $bg-shade-6;
+        border-radius: 37px;
+        margin: 35px auto 0;
+        padding: 40px 20px;
+        @include transition(background-color 1s ease-in-out);
+        width: 60%;
+
+        &.hovered {
+          background: $bg-shade-1;
+        }
+
+        div.section-wrap {
+          margin: 0 auto;
+          width: 300px;
+        }
+        
         label.file {
-          background: #fafafa;
-          border: 1px solid #bbb;
-          border-radius: 3px;
+          background: $bg-shade-3;
           cursor: pointer;
           font-size: $font-size-small;
           overflow: hidden;
-          padding: 8px 9px;
+          padding: 17px 9px;
           position: relative;
           z-index: 1;
+
+          &:hover {
+            background: $bg-shade-1;
+          }
         }
 
         input[type=file] {
@@ -34,28 +62,9 @@ body.dashboards {
           z-index: 2;
         }
       }
-    } // div.section-wrap
 
-    section.file {
-      border-right: 1px solid #bbb;
-      @include position(absolute, 0px 50% 0px 0px);
-
-      div.drop {
-        border: 5px dashed #bbb;
-        border-radius: 37px;
-        margin: 35px auto 0;
-        padding: 40px 20px;
-        @include transition(all 1s ease-in-out);
-        width: 60%;
-
-        &.hovered {
-          background: #eee;
-        }
-
-        div.section-wrap {
-          margin: 0 auto;
-          width: 300px;
-        }
+      input[type=submit] {
+        border-color: $bright-color-5;
       }
     }
 
@@ -69,43 +78,30 @@ body.dashboards {
       }
 
       select {
-        background: #fafafa;
-        border: 1px solid #bbb;
-        border-radius: 3px;
+        background: $bg-shade-3 url('/assets/select.png') no-repeat 280px 8px;
+        border: none;
+        border-radius: 0;
+        color: $text-color;
         font-size: $font-size-small;
         padding: 8px 9px;
         position: relative;
         -webkit-appearance: none;
+      }
 
-        &::before {
-          border-color: #666 transparent transparent transparent;
-          @include position(absolute, 10px 5px 0 0);
-        }
-
-        &::after {
-          border-color: transparent transparent #666 transparent;
-        }
-
-        &::before, &::after {
-          border-style: solid;
-          border-width: 4px;
-          content: "";
-          height: 0;
-          width: 0;
-          z-index: 10;
-        }
+      input[type=submit] {
+        border-color: $bright-color-4;
       }
     }
 
     div.or {
-      background: #fff;
+      background: $bg-color;
       margin-right: -35px;
       padding: 10px;
       @include position(absolute, 64px 50% 0 0);
       width: 50px;
 
       h3 {
-        color: #ddd;
+        color: $bg-shade-4;
         font-size: 30px;
         text-align: center;
       }
