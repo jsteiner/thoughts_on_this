@@ -1,5 +1,7 @@
 <%= form_for @image_subject do |form| %>
-  <%= render "shared/error_messages", :object => @image_subject %>
+  <% if controller.controller_name == 'image_subjects' %>
+    <%= render "shared/error_messages", :object => @discussion %>
+  <% end %>
 
   <div class='field'>
     <%= text_field_tag 'discussion_name', nil, placeholder: "Name your discussion" %>

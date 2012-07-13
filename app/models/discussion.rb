@@ -7,6 +7,7 @@ class Discussion < ActiveRecord::Base
   validates_presence_of :user_id, :name, :url
   validates_associated :subject
   validates_uniqueness_of :url
+  validate :with_subject_errors
 
   before_validation :generate_unique_url, on: :create
 
@@ -34,5 +35,10 @@ class Discussion < ActiveRecord::Base
       url = SecureRandom.hex(5)
     end
     self.url = url
+  end
+
+  def with_subject_errors
+    errors.messages.delete(:subject)
+    errors.merge! subject.errors
   end
 end
