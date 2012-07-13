@@ -1,4 +1,6 @@
 class TextSubjectsController < ApplicationController
+  before_filter :authorize
+
   def create
     @text_subject = TextSubject.new(params[:text_subject])
     @discussion = current_user.discussions.new(name: params[:discussion_name])
