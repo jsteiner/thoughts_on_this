@@ -15,21 +15,11 @@ Then /^I should be directed to sign in$/ do
 end
 
 When /^I upload an image$/ do
-  within '#new_image_subject' do
-    fill_in 'discussion_name', with: 'something'
-    attach_file('image_subject_image',
-                File.join(Rails.root, 'features/support/test_image.png'))
-    click_button 'Discuss'
-  end
+  upload_image 'test_image.png'
 end
 
 When /^I upload text$/ do
-  # TODO: refactor this. There is duplication with "I upload the text 'asdf'"
-  within '#new_text_subject' do
-    fill_in 'discussion_name', with: 'something'
-    fill_in 'text_subject_content', with: 'lots of text'
-    click_button 'Discuss'
-  end
+  upload_text 'text'
 end
 
 Then /^I should see the text and title on the page$/ do

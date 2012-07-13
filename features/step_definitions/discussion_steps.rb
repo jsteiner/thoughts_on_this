@@ -19,11 +19,7 @@ Given /^I visit a discussion page$/ do
 end
 
 When /^I upload the text "(.*?)"$/ do |text_content|
-  within '#new_text_subject' do
-    fill_in 'discussion_name', with: 'An appropriate name'
-    fill_in 'text_subject_content', with: text_content
-    click_button 'Discuss'
-  end
+  upload_text text_content
 end
 
 Then /^I should see "(.*?)" on the page$/ do |text_content|
@@ -31,12 +27,7 @@ Then /^I should see "(.*?)" on the page$/ do |text_content|
 end
 
 When /^I upload the image "(.*?)"$/ do |filename|
-  within '#new_image_subject' do
-    fill_in 'discussion_name', with: 'something'
-    attach_file('image_subject_image',
-                File.join(Rails.root, "features/support/#{filename}"))
-    click_button 'Discuss'
-  end
+  upload_image filename
 end
 
 Then /^I should see the image "(.*?)" on the page$/ do |filename|
