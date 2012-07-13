@@ -7,11 +7,6 @@ class Message < ActiveRecord::Base
 
   after_create :touch_discussion
 
-  # TODO: This probably doesn't belong here
-  def render
-    "<li><strong>#{user_name}:</strong> #{content}</li>"
-  end
-
   private
 
   def touch_discussion
