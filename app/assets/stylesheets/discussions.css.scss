@@ -125,8 +125,6 @@ body.discussions-show {
             padding: 1px 5px 1px 0px;
 
             strong {
-              background-color: $bright-color-2;
-              color: $black;
               display: block;
               float: left;
               font-size: $font-size-small;
@@ -136,6 +134,14 @@ body.discussions-show {
               white-space: nowrap;
               width: $name-width;
             }
+
+            .user-number-1 { color: $bright-color-1; }
+            .user-number-2 { color: $bright-color-2; }
+            .user-number-3 { color: $bright-color-3; }
+            .user-number-4 { color: $bright-color-4; }
+            .user-number-5 { color: $bright-color-5; }
+            .user-number-6 { color: $bright-color-6; }
+            .user-number-7 { color: $bright-color-7; }
 
             span {
               display: block;
