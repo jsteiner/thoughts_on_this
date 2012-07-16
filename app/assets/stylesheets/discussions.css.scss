@@ -145,22 +145,22 @@ body.discussions-show {
               white-space: nowrap;
               width: $name-width;
 
-              &.user-number-1 { @include chat-color($bright-color-1); }
-              &.user-number-2 { @include chat-color($bright-color-2); }
-              &.user-number-3 { @include chat-color($bright-color-3); }
-              &.user-number-4 { @include chat-color($bright-color-4); }
-              &.user-number-5 { @include chat-color($bright-color-5); }
-              &.user-number-6 { @include chat-color($bright-color-6); }
-              &.user-number-7 { @include chat-color($bright-color-7); }
+              &.user-number-0 { @include chat-color($bright-color-1); }
+              &.user-number-1 { @include chat-color($bright-color-2); }
+              &.user-number-2 { @include chat-color($bright-color-3); }
+              &.user-number-3 { @include chat-color($bright-color-4); }
+              &.user-number-4 { @include chat-color($bright-color-5); }
+              &.user-number-5 { @include chat-color($bright-color-6); }
+              &.user-number-6 { @include chat-color($bright-color-7); }
             }
 
-            .user-number-1 { color: $bright-color-1; }
-            .user-number-2 { color: $bright-color-2; }
-            .user-number-3 { color: $bright-color-3; }
-            .user-number-4 { color: $bright-color-4; }
-            .user-number-5 { color: $bright-color-5; }
-            .user-number-6 { color: $bright-color-6; }
-            .user-number-7 { color: $bright-color-7; }
+            .user-number-0 { color: $bright-color-1; }
+            .user-number-1 { color: $bright-color-2; }
+            .user-number-2 { color: $bright-color-3; }
+            .user-number-3 { color: $bright-color-4; }
+            .user-number-4 { color: $bright-color-5; }
+            .user-number-5 { color: $bright-color-6; }
+            .user-number-6 { color: $bright-color-7; }
 
             span {
               display: block;
@@ -189,13 +189,13 @@ body.discussions-show {
             padding: 10px 20px 10px 10px;
             width: 100%;
 
-            &.user-number-1 { border-color: $bright-color-1; }
-            &.user-number-2 { border-color: $bright-color-2; }
-            &.user-number-3 { border-color: $bright-color-3; }
-            &.user-number-4 { border-color: $bright-color-4; }
-            &.user-number-5 { border-color: $bright-color-5; }
-            &.user-number-6 { border-color: $bright-color-6; }
-            &.user-number-7 { border-color: $bright-color-7; }
+            &.user-number-0 { border-color: $bright-color-1; }
+            &.user-number-1 { border-color: $bright-color-2; }
+            &.user-number-2 { border-color: $bright-color-3; }
+            &.user-number-3 { border-color: $bright-color-4; }
+            &.user-number-4 { border-color: $bright-color-5; }
+            &.user-number-5 { border-color: $bright-color-6; }
+            &.user-number-6 { border-color: $bright-color-7; }
           }
         } // form
 
