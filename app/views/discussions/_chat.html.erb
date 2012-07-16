@@ -13,7 +13,7 @@
 
   <% if current_user.has_full_name? %>
     <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
-    <%= f.text_area :content, placeholder: 'Your message here', class: "user-number-#{@discussion.user_number(current_user.full_name)}" %>
+      <%= f.text_area :content, placeholder: 'Your message here', class: "user-number-#{@discussion.user_number(current_user.full_name)}" %>
     <% end %>
   <% else %>
     <section class="guest-form">
