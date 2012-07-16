@@ -2,3 +2,17 @@
   margin: 0 auto;
   max-width: 1000px;
 }
+
+@mixin chat-color($color) {
+  background-color: $color;
+  color: adjust-color($color,
+    $lightness: -40%,
+    $saturation: -10%);
+}
+
+@mixin mini-button($color) {
+  background: $bg-shade-2;
+  border-top: $top-border-mini-width solid $color;
+  padding: 2px 5px 3px 5px;
+  text-decoration: none;
+}

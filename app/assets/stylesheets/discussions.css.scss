@@ -10,13 +10,18 @@ body.discussions-index {
   div.main-wrap {
     padding: 20px;
 
+    h2 {
+      color: $bg-shade-7;
+      margin-bottom: 20px;
+    }
+
     ul#discussions {
       li {
         background: $bg-shade-4;
         @include clearfix;
         font-size: 18px;
         list-style: none;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         $time-width: 200px;
 
         time {
@@ -29,7 +34,7 @@ body.discussions-index {
 
         a {
           background: $bg-shade-2;
-          border-left: $side-color-border-width solid $bg-shade-7;
+          border-left: $top-color-border-width solid $bg-shade-7;
           color: $black;
           display: block;
           padding: 10px;
@@ -63,7 +68,7 @@ body.discussions-show {
       background: $bg-shade-8;
       @include box-sizing(border-box);
       color: $bg-shade-2;
-      padding: 20px flex-gutter();
+      padding: 20px;
       @include position(absolute, 0px flex-grid(8) 0px 0px);
       width: flex-grid(8);
 
@@ -84,7 +89,7 @@ body.discussions-show {
         $adjusted-flex-gutter: flex-gutter() * 1.5; // to compensate for the fact that it's inside a flex-grid(8) box
         margin: 20px 0 0 0;
         overflow: scroll;
-        @include position(absolute, 70px $adjusted-flex-gutter 20px $adjusted-flex-gutter);
+        @include position(absolute, 70px 10px 20px 10px);
 
         code {
           font-size: $font-size-med;
@@ -111,28 +116,42 @@ body.discussions-show {
         ul#messages {
           list-style: none;
           margin: 0;
-          padding: 10px 10px 10px 0;
+          padding: 10px ;
           padding-bottom: $textarea-height + 10px;
 
           li {
             $name-width: 90px;
             $padding: 3px;
 
-            border-radius: 4px;
             clear: both;
             color: $black;
-            margin: 3px 0 0 0;
+            margin: 0 0 3px 0;
             padding: 1px 5px 1px 0px;
 
+            &.unsent {
+              opacity: 0.5;
+            }
+
             strong {
+              background: $bg-shade-3;
+              color: $black;
               display: block;
               float: left;
               font-size: $font-size-small;
               overflow: hidden;
-              padding: $padding;
+              padding: $padding 5px $padding $padding;
+              text-align: right;
               text-overflow: ellipsis;
               white-space: nowrap;
               width: $name-width;
+
+              &.user-number-1 { @include chat-color($bright-color-1); }
+              &.user-number-2 { @include chat-color($bright-color-2); }
+              &.user-number-3 { @include chat-color($bright-color-3); }
+              &.user-number-4 { @include chat-color($bright-color-4); }
+              &.user-number-5 { @include chat-color($bright-color-5); }
+              &.user-number-6 { @include chat-color($bright-color-6); }
+              &.user-number-7 { @include chat-color($bright-color-7); }
             }
 
             .user-number-1 { color: $bright-color-1; }
@@ -145,7 +164,7 @@ body.discussions-show {
 
             span {
               display: block;
-              margin-left: $name-width + 10px;
+              margin-left: $name-width + 15px;
               padding-top: $padding;
             }
           }
@@ -157,20 +176,92 @@ body.discussions-show {
 
           @media screen and (max-width: 1000px) {
             left: 660px;
+            width: 340px;
           }
 
           textarea {
             background: $bg-shade-2;
-            border-top: $side-color-border-width solid $bright-color-1;
+            border-top: $top-color-border-width solid $bg-shade-6;
             height: $textarea-height;
             margin: 0;
             max-height: $textarea-height;
             max-width: 100%;
             padding: 10px 20px 10px 10px;
             width: 100%;
+
+            &.user-number-1 { border-color: $bright-color-1; }
+            &.user-number-2 { border-color: $bright-color-2; }
+            &.user-number-3 { border-color: $bright-color-3; }
+            &.user-number-4 { border-color: $bright-color-4; }
+            &.user-number-5 { border-color: $bright-color-5; }
+            &.user-number-6 { border-color: $bright-color-6; }
+            &.user-number-7 { border-color: $bright-color-7; }
+          }
+        } // form
+
+        section.guest-form {
+          form#new_name {
+            background: $bg-shade-2;
+            border-top: $top-color-border-width solid $bg-shade-6;
+            height: $textarea-height;
+            padding: 10px;
+
+            p {
+              font-size: $font-size-med;
+              margin-bottom: 30px;
+              padding-left: 5px;
+
+              a {
+                background: $bg-shade-1;
+                border-top: $top-border-mini-width solid $bright-color-5;
+                text-decoration: none;
+                padding: 2px 5px 3px 5px;
+
+                &:hover {
+                  background: $white;
+                };
+              }
+            }
+
+            div.control-group {
+              @include box-sizing(border-box);
+              float: left;
+              margin-right: flex-gutter();
+              width: flex-grid(7);
+
+              &.first {
+                display: none;
+              }
+
+              input {
+                background: $bg-shade-1;
+                width: 100%;
+
+                &:focus {
+                  background: $white;
+                }
+              }
+            }
+
+            div.form-actions {
+              float: left;
+              width: flex-grid(5);
+
+              input[type=submit] {
+                background: $bg-shade-1;
+                border-color: $bright-color-4;
+                margin: 0;
+                padding: 5px 0 6px;
+                width: 100%;
+
+                &:hover {
+                  background: $white;
+                }
+              }
+            }
           }
         }
-      }
-    }
-  }
-}
+      } // div#chat-container
+    } // section.chat
+  } // div.main-wrap
+} // body.discussions-show

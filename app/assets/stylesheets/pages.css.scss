@@ -22,11 +22,11 @@ body.pages-show {
 
       a {
         font-size: $font-size-base;
-        margin-left: 20px;
+        margin-right: 20px;
         text-decoration: none;
 
-        &:first-child {
-          margin-left: 0;
+        &:last-child {
+          margin-right: 0;
         }
 
         &.sign-up {
@@ -50,6 +50,12 @@ body.clearance-users-new {
 body.clearance-sessions-new {
   input[type=submit] {
     border-color: $bright-color-5;
+  }
+
+  ul li a {
+    text-decoration: none;
+//    @include mini-button($bright-color-5);
+//    border-top: none;
   }
 }
 
@@ -82,7 +88,6 @@ body.clearance-sessions-new, body.clearance-users-new, body.clearance-passwords-
         margin-right: 10px;
 
         a {
-          border-radius: 3px;
           color: $bg-shade-7;
 
           &:hover {
@@ -98,4 +103,16 @@ body.clearance-sessions-new, body.clearance-users-new, body.clearance-passwords-
       margin-bottom: 20px;
     }
   } // div.main-wrap
+}
+
+body.sessions-create {
+  @extend body.clearance-sessions-new;
+}
+
+body.clearance-users-create {
+  @extend body.clearance-users-new;
+}
+
+body.clearance-passwords-create {
+  @extend body.clearance-passwords-new;
 }
