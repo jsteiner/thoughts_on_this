@@ -8,7 +8,7 @@ class Message < ActiveRecord::Base
   after_create :touch_discussion
 
   def user_number
-    discussion.user_number(user_name).try(:+, 1)
+    discussion.user_number(user_name)
   end
 
   private
