@@ -32,7 +32,7 @@ class Discussion < ActiveRecord::Base
   end
 
   def user_number(user_name)
-    user_names.index(user_name).try(:+, 1)
+    user_names.index(user_name)
   end
 
   private
