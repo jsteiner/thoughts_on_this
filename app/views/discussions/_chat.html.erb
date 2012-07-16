@@ -13,24 +13,26 @@
 
   <% if current_user.has_full_name? %>
     <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
-      <%= f.text_area :content,  rows: '3' %>
+    <%= f.text_area :content, placeholder: 'Your message here', class: "user-number-#{@discussion.user_number(current_user.full_name)}" %>
     <% end %>
   <% else %>
-    <p>
-      Don't be a stranger! Enter your name
-      <% unless signed_in? %>, or <%= link_to 'sign in', sign_in_path %>,<% end %>
-      to begin chating.
-    </p>
-    <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
-      <div class='control-group'>
-        <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
-      </div>
-      <div class='control-group'>
-        <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
-      </div>
-      <div class='form-actions'>
-        <%= submit_tag 'Join discussion' %>
-      </div>
+    <section class="guest-form">
+      <%= form_tag discussion_names_path(@discussion), id: "new_name" do %>
+        <p>
+          Enter your name<!--
+          --><% unless signed_in? %>, or <%= link_to 'sign in', sign_in_path %><% end %>
+          to begin chating.
+        </p>
+        <div class='control-group first'>
+          <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
+        </div>
+        <div class='control-group last'>
+          <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
+        </div>
+        <div class='form-actions'>
+          <%= submit_tag 'Join discussion' %>
+        </div>
+      </section>
     <% end %>
   <% end %>
 </div>

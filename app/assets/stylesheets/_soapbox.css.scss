@@ -26,18 +26,20 @@ textarea,
   background-color: $bg-shade-2;
   border: none;
   @include box-sizing(border-box);
-  margin: 0;
+  margin-bottom: 12px;
   padding: 0.7em 0.45em;
   @include transition(border-color);
   width: 300px;
 
-  &:hover {
+  &:last-child {
+    margin-bottom: none;
   }
 
   &:focus {
     background: $bg-shade-1;
     outline: none;
-    &::-webkit-input-placeholder {
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder {
       color: $bg-shade-6;
     }
   }
@@ -86,10 +88,10 @@ a.button {
   color: $text-color;
   background: $bg-button;
   border: none;
-  border-top: $side-color-border-width solid transparent;
+  border-top: $top-color-border-width solid transparent;
   font-size: $font-size-base;
   margin-top: 24px;
-  padding: .4em 1em;
+  padding: 5px 16px 6px;
 
   &:hover {
     background: $bg-shade-1;

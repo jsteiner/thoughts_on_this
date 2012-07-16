@@ -12,6 +12,24 @@ body {
   a:visited {
     color: $bg-shade-7;
   }
+
+  div.flash {
+    background: $bg-shade-1;
+    border: none;
+    border-top: $top-color-border-width solid $bright-color-1;
+    border-radius: 0;
+    color: $black;
+    margin-bottom: 50px;
+    padding: 5px;
+
+    h2 {
+      font-size: $font-size-med;
+    }
+
+    ul li {
+      list-style: none;
+    }
+  }
 }
 
 header {
@@ -81,7 +99,7 @@ header {
             margin-top: 3px;
 
             a {
-              border-left: $side-color-border-width solid transparent;
+              border-left: $top-color-border-width solid transparent;
               display: block;
               padding: 8px 15px;
 
