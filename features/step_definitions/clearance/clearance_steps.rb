@@ -18,8 +18,8 @@ When /^I sign up (?:with|as) "(.*)" and "(.*)"$/ do |email, password|
   visit sign_up_path
   page.should have_css("input[type='email']")
 
-  fill_in "Email", :with => email
-  fill_in "Password", :with => password
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
   click_button "Sign up"
 end
 
@@ -41,8 +41,8 @@ When /^I sign in (?:with|as) "([^"]*)" and "([^"]*)"$/ do |email, password|
   visit sign_in_path
   page.should have_css("input[type='email']")
 
-  fill_in "Email", :with => email
-  fill_in "Password", :with => password
+  fill_in "session_email", :with => email
+  fill_in "session_password", :with => password
   click_button "Sign in"
 end
 
@@ -59,7 +59,7 @@ When /^I reset the password for "(.*)"$/ do |email|
   visit new_password_path
   page.should have_css("input[type='email']")
 
-  fill_in "Email address", :with => email
+  fill_in "password_email", :with => email
   click_button "Reset password"
 end
 

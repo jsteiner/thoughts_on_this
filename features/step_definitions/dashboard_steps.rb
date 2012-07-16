@@ -7,7 +7,7 @@ Then /^I should be redirected to my dashboard$/ do
 end
 
 Then /^I should be on the dashboard page$/ do
-  current_path.should == '/dashboard'
+  current_path.should == dashboard_path
 end
 
 Then /^I should be directed to sign in$/ do

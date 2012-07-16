@@ -7,7 +7,6 @@ end
 
 When /^I enter my name$/ do
   within "#new_name" do
-    fill_in "first_name", with: "Joe"
     fill_in "last_name", with: "Shmoe"
     click_button "Join discussion"
   end
