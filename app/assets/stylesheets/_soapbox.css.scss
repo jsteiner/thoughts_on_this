@@ -1,20 +1,18 @@
 //************************************************************************//
 // Form UI Library
 //************************************************************************//
-$form-border-color:       #ccc;
-$form-border-color-hover: #aaa;
-$form-border-color-focus: #56B4EF; //blue default
-$form-box-shadow-focus:   darken($form-border-color-focus, 5%);
-$form-font-size:          12px;
-$form-font-family:        $lucida-grande;
+$form-font-family: $lucida-grande;
 
+div.field {
+  line-height: 0;
+  margin-bottom: 12px;
+}
 
 input,
 label,
 select {
   display: block;
   font-family: $form-font-family;
-  font-size: $form-font-size;
 }
 
 label {

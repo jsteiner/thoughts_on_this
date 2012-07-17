@@ -5,10 +5,10 @@
 </p>
 
 <%= form_for :password, :url => passwords_path do |form| %>
-  <div class="text_field">
+  <div class="field">
     <%= form.text_field :email, :type => "email", placeholder: 'Email' %>
   </div>
-  <div class="submit_field">
+  <div class="action">
     <%= form.submit "Reset password" %>
   </div>
 <% end %>

@@ -2,5 +2,7 @@
 
 <%= form_for @user do |form| %>
   <%= render :partial => '/users/form', :object => form %>
-  <%= form.submit 'Sign up' %>
+  <div class="action">
+    <%= form.submit 'Sign up' %>
+  </div>
 <% end %>
