@@ -12,18 +12,17 @@ $('#chat-container').scrollTop($('#messages').height());
 
 var current_user_id = $('meta[name=current_user_id]').attr('content');
 var discussion_url = $('meta[name=discussion_url]').attr('content');
+var user_number = $('#template-message').attr('data-user-number');
+var user_name = $('#template-message').attr('data-user-name');
 
+// Pusher callback
 var pusher = new Pusher('acecc5ffed2935bdc2d9');
 var channel = pusher.subscribe(discussion_url);
 channel.bind('new_message', function(data) {
-  $("#messages").append(data.message);
   if(data.user_id == current_user_id) {
-    $("#new_message")[0].reset();
-  }
-
-  var chat = document.getElementById('chat-container');
-  if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
-    chat.scrollTop = chat.scrollHeight;
+    $('.unsent').addClass('user-number-' + user_number).removeClass('unsent');
+  } else {
+    $("#messages").append(data.message);
   }
 });
 
@@ -33,7 +32,23 @@ $('#message_content').keypress(function(e) {
     e.preventDefault();
     if(!$('#message_content').val().match(/^\s*$/)) {
       $('form#new_message').submit();
+      $("#new_message")[0].reset();
     }
     return false;
+  }
+});
+
+// Append to chat on send
+$('form#new_message').submit(function() {
+  var template = $('#template-message').clone();
+  template.children().first().text(user_name);
+  template.children().last().text($('#message_content').val());
+  template.appendTo("#messages").removeAttr('id', 'template-message');
+
+
+  // Scroll chat
+  var chat = document.getElementById('chat-container');
+  if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
+    chat.scrollTop = chat.scrollHeight;
   }
 });

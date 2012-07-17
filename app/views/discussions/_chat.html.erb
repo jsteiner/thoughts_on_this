@@ -8,6 +8,7 @@
   <% end %>
 
   <ul id="messages">
+    <li id='template-message' data-user-name='<%= current_user.full_name %>' data-user-number='<%= @discussion.user_number(current_user.full_name) %>'><strong class='unsent'></strong><span></span></li>
     <%= render @messages %>
   </ul>
 

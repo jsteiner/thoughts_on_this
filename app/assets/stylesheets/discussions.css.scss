@@ -132,6 +132,10 @@ body.discussions-show {
               opacity: 0.5;
             }
 
+            &#template-message {
+              display: none;
+            }
+
             strong {
               background: $bg-shade-3;
               color: $black;
