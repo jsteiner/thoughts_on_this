@@ -15,6 +15,16 @@ describe Discussion do
     end
   end
 
+  context '#generate_user_number_offset' do
+    it 'does not change the url on update' do
+      discussion = create(:discussion, :text)
+      user_number_offset = discussion.user_number_offset
+      discussion.name = "New name"
+      discussion.save
+      discussion.user_number_offset.should == user_number_offset
+    end
+  end
+
   context '#ordered_messages' do
     it 'returns messages in chronological order' do
       discussion = create(:discussion, :text)

@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612204056) do
+ActiveRecord::Schema.define(:version => 20120717214109) do
 
   create_table "discussions", :force => true do |t|
-    t.string   "name",         :null => false
-    t.integer  "subject_id",   :null => false
-    t.string   "subject_type", :null => false
-    t.integer  "user_id",      :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "name",                              :null => false
+    t.integer  "subject_id",                        :null => false
+    t.string   "subject_type",                      :null => false
+    t.integer  "user_id",                           :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "url"
+    t.integer  "user_number_offset", :default => 0, :null => false
   end
 
   add_index "discussions", ["subject_id"], :name => "index_discussions_on_subject_id"
