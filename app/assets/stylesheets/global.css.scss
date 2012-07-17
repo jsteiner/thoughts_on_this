@@ -5,12 +5,21 @@ html, body {
 body {
   background: $bg-color;
   color: $text-color;
+  font-family: $helvetica;
   min-width: $min-width;
 
   a,
   a:link,
   a:visited {
     color: $bg-shade-7;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  img {
+    margin: 0;
   }
 
   div.flash {
@@ -30,6 +39,8 @@ body {
       list-style: none;
     }
   }
+
+
 }
 
 header {
@@ -59,7 +70,7 @@ header {
 
         a.user-menu {
           display: inline-block;
-          padding-right: 20px;
+          padding-right: 27px;
           position: relative;
 
           &::before {
@@ -68,7 +79,7 @@ header {
             border-width: 4px;
             content: "";
             height: 0;
-            @include position(absolute, 23px 5px 0 0);
+            @include position(absolute, 23px 15px 0 0);
             width: 0;
           }
         }
@@ -97,13 +108,13 @@ header {
             background: $bg-shade-3;
 
             a {
-              border-top: $top-color-border-width solid transparent;
+              border-left: $top-color-border-width solid transparent;
               display: block;
               padding: 8px 15px;
               text-align: center;
 
               &:hover {
-                background: $bg-shade-2;
+                background: $bg-shade-1;
                 color: $black;
               }
 

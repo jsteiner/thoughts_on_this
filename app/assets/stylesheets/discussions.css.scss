@@ -99,7 +99,9 @@ body.discussions-show {
       }
 
       img {
+        border: 5px solid $white;
         max-width: 100% - flex-gutter();
+        padding: 5px;
       }
     }
 
@@ -127,6 +129,10 @@ body.discussions-show {
             color: $black;
             margin: 0 0 3px 0;
             padding: 1px 5px 1px 0px;
+
+            &:last-child {
+              margin: 0;
+            }
 
             &.unsent {
               opacity: 0.5;

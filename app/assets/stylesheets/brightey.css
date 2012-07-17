@@ -1,0 +1,91 @@
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+pre code {
+  display: block;
+  background: $bg-shade-1;
+  color: $bg-shade-7;
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+  color: $bg-shade-6;
+  font-style: italic;
+}
+
+pre .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
+  color: $bright-color-5;
+}
+
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+  color: $bright-color-6;
+}
+
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .builtin,
+pre .built_in,
+pre .identifier,
+pre .title .keymethods,
+pre .vhdl .literal,
+pre .id {
+  color: $bright-color-4;
+}
+
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+  color: $bright-color-3;
+}
+
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .diff .change,
+pre .special,
+pre .keymethods,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata {
+  color: $bright-color-2;
+}
+
+pre .deletion {
+  color: $bright-color-1;
+}
+
+pre .tex .formula {
+  background: $bright-color-7;
+}

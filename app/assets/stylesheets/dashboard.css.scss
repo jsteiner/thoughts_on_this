@@ -1,135 +1,121 @@
-body.dashboards {
-  div.main-wrap {
-    min-height: 100%;
-    min-width: $min-width;
-    @include position(fixed, $header-height 0px 0px 0px);
+div.dashboard-wrap {
+  min-height: 100%;
+  min-width: $min-width;
+  @include position(fixed, $header-height 0px 0px 0px);
+
+  div.section-wrap {
+    h2 {
+      color: $grey;
+      margin-bottom: 12px;
+    }
+  } // div.section-wrap
+
+  section.file {
+    border-right: 3px solid $bg-shade-4;
+    @include position(absolute, 0px 50% 0px 0px);
 
     div.section-wrap {
-      h2 {
-        color: $grey;
-        margin-bottom: 12px;
-      }
+      margin: 0 auto;
+      padding-top: 80px;
+      width: 300px;
 
-      div.field {
-        line-height: 0;
-        margin-bottom: 12px;
-      }
-    } // div.section-wrap
-
-    section.file {
-      border-right: 3px solid $bg-shade-4;
-      @include position(absolute, 0px 50% 0px 0px);
-
-      div.section-wrap {
-        margin: 0 auto;
-        padding-top: 80px;
-        width: 300px;
-
-        div.drop {
-          background: transparent url('/assets/drop.png') no-repeat center 100px;
-          border: 5px dashed $bg-shade-6;
-          @include box-sizing(border-box);
-          height: 250px;
-          position: relative;
-          @include transition(background-color 1s ease-in-out);
-
-          &.hovered {
-            background: $bg-shade-1;
-          }
-
-          &:before {
-            color: $bg-shade-3;
-            content: "Or drop one";
-            font-size: $font-size-huge;
-            font-weight: bold;
-            @include position(absolute, 40px 0px 0 0px );
-            text-align: center;
-          }
-        }
-      }
-
-      label.file {
-        background: $bg-shade-3;
-        cursor: pointer;
-        font-size: $font-size-small;
-        overflow: hidden;
-        padding: 17px 9px;
+      div.drop {
+        background: transparent url('/assets/drop.png') no-repeat center 100px;
+        border: 5px dashed $bg-shade-2;
+        @include box-sizing(border-box);
+        height: 250px;
         position: relative;
-        z-index: 1;
+        @include transition(background-color .5s ease-in-out);
 
-        &:hover {
-          background: $bg-shade-1;
+        &.hovered {
+          background-color: $bg-shade-1;
+          border-color: $bg-shade-3;
+        }
+
+        &:before {
+          color: $bg-shade-3;
+          content: "Or drop one";
+          font-size: $font-size-huge;
+          font-weight: bold;
+          @include position(absolute, 40px 0px 0 0px );
+          text-align: center;
         }
       }
+    }
 
-      input[type=file] {
-        height: 100%;
-        cursor: pointer;
-        display: inline;
-        opacity: 0;
-        @include position(absolute, 0px 0px 0px 0px);
-        width: auto;
-        z-index: 2;
+    label.file {
+      background: $bg-shade-2;
+      cursor: pointer;
+      font-size: $font-size-small;
+      overflow: hidden;
+      padding: 17px 9px;
+      position: relative;
+      z-index: 1;
+
+      &:hover {
+        background: $bg-shade-1;
       }
+    }
+
+    input[type=file] {
+      height: 100%;
+      cursor: pointer;
+      display: inline;
+      opacity: 0;
+      @include position(absolute, 0px 0px 0px 0px);
+      width: auto;
+      z-index: 2;
+    }
+  }
+
+  input[type=submit] {
+    border-color: $bright-color-5;
+  }
+
+  section.paste {
+    border-left: 2px solid $bg-shade-4;
+    @include position(absolute, 0px 0px 0px 50%);
+
+    div.section-wrap {
+      margin: 0 auto;
+      padding-top: 80px;
+      width: 300px;
+    }
+
+    select {
+      background: $bg-shade-2 url('/assets/select.png') no-repeat 280px 10px;
+      border: none;
+      border-radius: 0;
+      color: $text-color;
+      font-size: $font-size-small;
+      padding: 10px 9px 9px;
+      position: relative;
+      -webkit-appearance: none;
+    }
+
+    textarea {
+      height: 250px;
     }
 
     input[type=submit] {
-      border-color: $bright-color-5;
+      border-color: $bright-color-4;
     }
+  }
 
-    section.paste {
-      border-left: 3px solid $bg-shade-4;
-      @include position(absolute, 0px 0px 0px 50%);
+  div.or {
+    background: $bg-color;
+    margin-right: -35px;
+    padding: 10px;
+    @include position(absolute, 64px 50% 0 0);
+    width: 50px;
 
-      div.section-wrap {
-        margin: 0 auto;
-        padding-top: 80px;
-        width: 300px;
-      }
-
-      select {
-        background: $bg-shade-3 url('/assets/select.png') no-repeat 280px 10px;
-        border: none;
-        border-radius: 0;
-        color: $text-color;
-        font-size: $font-size-small;
-        padding: 10px 9px 9px;
-        position: relative;
-        -webkit-appearance: none;
-      }
-
-      textarea {
-        height: 250px;
-      }
-
-      input[type=submit] {
-        border-color: $bright-color-4;
-      }
+    h3 {
+      color: $bg-shade-4;
+      font-size: 30px;
+      text-align: center;
     }
-
-    div.or {
-      background: $bg-color;
-      margin-right: -35px;
-      padding: 10px;
-      @include position(absolute, 64px 50% 0 0);
-      width: 50px;
-
-      h3 {
-        color: $bg-shade-4;
-        font-size: 30px;
-        text-align: center;
-      }
-    }
-  } // div.main-wrap
-} // body.dashboards
-
-body.image_subjects-create {
-  @extend body.dashboards;
-}
-
-body.text_subjects-create {
-  @extend body.dashboards;
-}
+  }
+} // div.dashboard-wrap
 
 div#error-messages {
   @extend div.flash;

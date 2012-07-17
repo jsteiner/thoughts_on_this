@@ -11,7 +11,7 @@
 }
 
 @mixin mini-button($color) {
-  background: $bg-shade-2;
+  background: $bg-button;
   border-top: $top-border-mini-width solid $color;
   padding: 2px 5px 3px 5px;
   text-decoration: none;
