@@ -12,15 +12,15 @@ $('#chat-container').scrollTop($('#messages').height());
 
 var current_user_id = $('meta[name=current_user_id]').attr('content');
 var discussion_url = $('meta[name=discussion_url]').attr('content');
-var user_number = $('#template-message').attr('data-user-number');
 var user_name = $('#template-message').attr('data-user-name');
 
 // Pusher callback
 var pusher = new Pusher('acecc5ffed2935bdc2d9');
 var channel = pusher.subscribe(discussion_url);
 channel.bind('new_message', function(data) {
-  if(data.user_id == current_user_id) {
-    $('.unsent').addClass('user-number-' + user_number).removeClass('unsent');
+  if(!current_user_id || data.user_id === current_user_id) {
+    $('.unsent').addClass('user-number-' + data.user_number).removeClass('unsent');
+    $('#message_content').addClass('user-number-' + data.user_number);
   } else {
     $("#messages").append(data.message);
   }
