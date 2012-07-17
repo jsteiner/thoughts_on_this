@@ -58,9 +58,8 @@ header {
         @include position(absolute, 0px 15px 0 0);
 
         a.user-menu {
-          display: block;
-          min-width: 130px;
-          padding-right: 17px;
+          display: inline-block;
+          padding-right: 20px;
           position: relative;
 
           &::before {
@@ -77,11 +76,11 @@ header {
         > li {
           display: inline-block;
           line-height: inherit;
-          margin-left: 10px;
+          position: relative;
 
           > a {
             display: block;
-            padding: 18px 5px;
+            padding: 18px 15px;
 
             &:hover {
               background: $bg-shade-1;
@@ -92,24 +91,20 @@ header {
         ul.menu-content {
           display: none;
           margin: 0;
-          @include position(absolute, $header-height 0px 0 0);
+          @include position(absolute, $header-height 0px 0 0px);
 
           li {
             background: $bg-shade-3;
-            margin-top: 3px;
 
             a {
-              border-left: $top-color-border-width solid transparent;
+              border-top: $top-color-border-width solid transparent;
               display: block;
               padding: 8px 15px;
+              text-align: center;
 
               &:hover {
                 background: $bg-shade-2;
                 color: $black;
-              }
-
-              &.your-discussions {
-                border-color: $bright-color-3;
               }
 
               &.sign-out {
