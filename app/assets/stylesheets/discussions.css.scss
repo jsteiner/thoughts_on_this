@@ -85,23 +85,22 @@ body.discussions-show {
         }
       }
 
-      pre {
-        $adjusted-flex-gutter: flex-gutter() * 1.5; // to compensate for the fact that it's inside a flex-grid(8) box
+      div.subject-wrapper {
         margin: 20px 0 0 0;
         overflow: scroll;
-        @include position(absolute, 70px 10px 20px 10px);
+        @include position(absolute, 70px 10px 20px 20px);
 
         code {
           font-size: $font-size-med;
           margin: 0;
           padding: 20px;
         }
-      }
 
-      img {
-        border: 5px solid $white;
-        max-width: 100% - flex-gutter();
-        padding: 5px;
+        img {
+          border: 5px solid $white;
+          @include box-sizing(border-box);
+          max-width: 100%;
+        }
       }
     }
 

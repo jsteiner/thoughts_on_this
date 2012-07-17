@@ -1,9 +1,11 @@
-<pre class='text-content'><code class='language-<%= text_subject.language.parameterize %>'><%= text_subject.content %></code></pre>
+<div class="subject-wrapper">
+  <pre class='text-content'><code class='language-<%= text_subject.language.parameterize %>'><%= text_subject.content %></code></pre>
 
-<% unless text_subject.language == 'Plain Text' %>
-  <% content_for :javascript do %>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
+  <% unless text_subject.language == 'Plain Text' %>
+    <% content_for :javascript do %>
+      <script>
+        hljs.initHighlightingOnLoad();
+      </script>
+    <% end %>
   <% end %>
-<% end %>
+</div>
