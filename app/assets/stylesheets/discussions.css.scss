@@ -81,25 +81,31 @@ body.discussions-show {
 
       p.share {
         a {
-          color: $bg-shade-2;
+          @include mini-button($bright-color-1);
+          border: none;
+          color: $black;
+          text-decoration: none;
         }
       }
 
       div.subject-wrapper {
+        background: $bg-shade-1;
         margin: 20px 0 0 0;
         overflow: scroll;
         @include position(absolute, 70px 10px 20px 20px);
+        text-align: center;
 
         code {
           font-size: $font-size-med;
           margin: 0;
           padding: 20px;
+          text-align: left;
         }
 
         img {
-          border: 5px solid $white;
           @include box-sizing(border-box);
           max-width: 100%;
+          padding: 10px;
         }
       }
     }
