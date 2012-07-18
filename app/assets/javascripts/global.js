@@ -1,14 +1,11 @@
 $(document).ready(function() {
-  // this triggers
   $('li.dropdown > a').click(function(e) {
-    $(this).siblings('.menu-content').show();
+    $(this).siblings('.menu-content').toggle();
     e.preventDefault();
+    return false;
   });
 
-  // then this does, incorrectly because it's now not hidden
-  $('body').click(function() {
-    if (!$('.menu-content').is(':hidden')) {
-      $('.menu-content').hide();
-    };
-  })
+  $(document).click(function() {
+    $('.dropdown .menu-content').hide();
+  });
 });
