@@ -1,6 +1,8 @@
 <section class='view'>
   <h2 data-role="discussion-name"><%= @discussion.name %></h2>
-  <p class="share">Share this link to start a discussion: <%= link_to discussion_url(@discussion), @discussion, class: 'share-link' %> <%= link_to "Show raw", raw_subject_url(@discussion) %></p>
+  <p class="share">Share this link to start a discussion:
+    <%= link_to discussion_url(@discussion), @discussion, class: 'share-link' %>
+  </p>
   <%= render @discussion.subject %>
 </section>
 
