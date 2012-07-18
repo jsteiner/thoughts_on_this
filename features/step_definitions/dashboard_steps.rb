@@ -28,12 +28,7 @@ Then /^I should see the text and title on the page$/ do
 end
 
 When /^I upload an invalid image$/ do
-  within '#new_image_subject' do
-    fill_in 'discussion_name', with: 'something'
-    attach_file('image_subject_image',
-                File.join(Rails.root, 'features/support/env.rb'))
-    click_button 'Discuss'
-  end
+  upload_image 'env.rb'
 end
 
 Then /^I should see an error message$/ do

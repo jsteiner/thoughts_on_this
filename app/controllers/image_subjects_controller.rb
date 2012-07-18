@@ -3,7 +3,7 @@ class ImageSubjectsController < ApplicationController
 
   def create
     @image_subject = ImageSubject.new(params[:image_subject])
-    @discussion = current_user.discussions.new(name: params[:discussion_name])
+    @discussion = current_user.discussions.new(name: params[:image_discussion_name])
     @discussion.subject = @image_subject
 
     if @discussion.save

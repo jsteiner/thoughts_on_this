@@ -3,7 +3,7 @@ class TextSubjectsController < ApplicationController
 
   def create
     @text_subject = TextSubject.new(params[:text_subject])
-    @discussion = current_user.discussions.new(name: params[:discussion_name])
+    @discussion = current_user.discussions.new(name: params[:text_discussion_name])
     @discussion.subject = @text_subject
 
     if @discussion.save
