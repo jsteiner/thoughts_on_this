@@ -92,7 +92,7 @@ body.discussions-show {
         background: $bg-shade-1;
         margin: 20px 0 0 0;
         overflow: scroll;
-        @include position(absolute, 70px 10px 20px 20px);
+        @include position(absolute, 70px 10px 10px 20px);
         text-align: center;
 
         code {
