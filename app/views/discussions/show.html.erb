@@ -5,8 +5,8 @@
 <section class='view'>
   <h2 data-role="discussion-name"><%= @discussion.name %></h2>
   <ul class="toolbar">
-    <li><%= link_to "Share", @discussion, class: 'share' %></li>
     <li style="display: none;"><%= url_for discussion_url(@discussion) %></li>
+    <li><%= link_to "Share", @discussion, class: 'share' %></li>
     <li><%= link_to_raw_subject(@discussion.subject) %></li>
   </ul>
   <%= render @discussion.subject %>

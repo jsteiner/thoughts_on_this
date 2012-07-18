@@ -81,7 +81,7 @@ body.discussions-show {
 
       ul.toolbar {
         font-size: 0px;
-        margin-top: 20px;
+        margin-top: 17px;
         text-align: right;
 
         li {
@@ -117,10 +117,14 @@ body.discussions-show {
           text-align: left;
         }
 
-        img {
-          @include box-sizing(border-box);
-          max-width: 100%;
-          padding: 10px;
+        &.visual {
+          background: $black;
+
+          img {
+            @include box-sizing(border-box);
+            max-width: 100%;
+            padding: 10px;
+          }
         }
 
         a.raw {
@@ -138,11 +142,12 @@ body.discussions-show {
     }
 
     section.chat {
+      $textarea-height: 120px;
+
       background: $bg-shade-1;
-      @include position(absolute, 0px 0px 0px flex-grid(8));
+      @include position(absolute, 0px 0px $textarea-height flex-grid(8));
 
       div#chat-container {
-        $textarea-height: 120px;
 
         @include position(absolute, 0px 0px 0px 0px);
         overflow: scroll;
@@ -150,8 +155,7 @@ body.discussions-show {
         ul#messages {
           list-style: none;
           margin: 0;
-          padding: 10px ;
-          padding-bottom: $textarea-height + 10px;
+          padding: 10px;
 
           li {
             $name-width: 90px;

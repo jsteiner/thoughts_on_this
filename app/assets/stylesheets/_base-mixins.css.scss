@@ -13,6 +13,12 @@
 @mixin mini-button($color) {
   background: $bg-button;
   border-top: $top-border-mini-width solid $color;
+  color: $bg-shade-7;
   padding: 2px 5px 3px 5px;
   text-decoration: none;
+
+  &:hover {
+    background: $bg-shade-1;
+    color: $bg-shade-8;
+  }
 }
