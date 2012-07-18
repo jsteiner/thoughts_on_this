@@ -7,7 +7,7 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.find_by_url!(params[:id])
     @message = Message.new
     @messages = @discussion.ordered_messages
-    @current_user_number = @discussion.user_number(current_user.full_name)
+    @current_user_number = @discussion.user_number(current_user.name)
   end
 
   def edit

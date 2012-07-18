@@ -8,11 +8,11 @@
   <% end %>
 
   <ul id="messages">
-    <li id='template-message' data-user-name='<%= current_user.full_name %>' data-user-number='<%= @discussion.user_number(current_user.full_name) %>'><strong class='unsent'></strong><span></span></li>
+    <li id='template-message' data-user-name='<%= current_user.name %>' data-user-number='<%= @discussion.user_number(current_user.name) %>'><strong class='unsent'></strong><span></span></li>
     <%= render @messages %>
   </ul>
 
-  <% if current_user.has_full_name? %>
+  <% if current_user.has_name? %>
     <%= form_for @message, url: discussion_messages_path(@discussion), remote: true do |f| %>
       <%= f.text_area :content, placeholder: 'Your message here',
         class: ("user-number-#{@current_user_number}" if @current_user_number) %>
@@ -25,11 +25,8 @@
           --><% unless signed_in? %>, or <%= link_to 'sign in', sign_in_path %><% end %>
           to begin chating.
         </p>
-        <div class='control-group first'>
-          <%= text_field_tag :first_name, nil, placeholder: 'First name' %>
-        </div>
         <div class='control-group last'>
-          <%= text_field_tag :last_name, nil, placeholder: 'Last name' %>
+          <%= text_field_tag :name, nil, placeholder: 'Name' %>
         </div>
         <div class='form-actions'>
           <%= submit_tag 'Join discussion' %>

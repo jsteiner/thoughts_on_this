@@ -1,18 +1,12 @@
 class Guest
-  def initialize(first_name, last_name)
-    @first_name, @last_name = first_name, last_name
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
   end
 
-  def full_name
-    if has_full_name?
-      "#{@first_name} #{@last_name}"
-    else
-      nil
-    end
-  end
-
-  def has_full_name?
-    @first_name && @last_name
+  def has_name?
+    @name.present?
   end
 
   def persisted?
