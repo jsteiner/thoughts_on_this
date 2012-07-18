@@ -1,6 +1,14 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag 'discussions/discussion' %>
+<% end %>
+
 <section class='view'>
   <h2 data-role="discussion-name"><%= @discussion.name %></h2>
-  <p class="share">Share this link to begin a discussion: <%= link_to discussion_url(@discussion), @discussion %></p>
+  <ul class="toolbar">
+    <li><%= link_to "Share", @discussion, class: 'share' %></li>
+    <li style="display: none;"><%= url_for discussion_url(@discussion) %></li>
+    <li><%= link_to_raw_subject(@discussion.subject) %></li>
+  </ul>
   <%= render @discussion.subject %>
 </section>
 

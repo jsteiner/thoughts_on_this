@@ -68,7 +68,7 @@ body.discussions-show {
       background: $bg-shade-8;
       @include box-sizing(border-box);
       color: $bg-shade-2;
-      padding: 20px;
+      padding: 20px 10px 10px 20px;
       @include position(absolute, 0px flex-grid(8) 0px 0px);
       width: flex-grid(8);
 
@@ -79,27 +79,60 @@ body.discussions-show {
         white-space: nowrap;
       }
 
-      p.share {
-        a {
-          color: $bg-shade-2;
+      ul.toolbar {
+        font-size: 0px;
+        margin-top: 20px;
+        text-align: right;
+
+        li {
+          display: inline;
+          font-size: $font-size-small;
+          margin-left: 4px;
+
+          a {
+            @include mini-button($bright-color-1);
+
+            &.share {
+              border-color: $bright-color-2;
+            }
+
+            &.raw {
+              border-color: $bright-color-3;
+            }
+          }
         }
       }
 
       div.subject-wrapper {
+        background: $bg-shade-1;
         margin: 20px 0 0 0;
         overflow: scroll;
-        @include position(absolute, 70px 10px 20px 20px);
+        @include position(absolute, 70px 10px 10px 20px);
+        text-align: center;
 
         code {
           font-size: $font-size-med;
           margin: 0;
           padding: 20px;
+          text-align: left;
         }
 
         img {
-          border: 5px solid $white;
           @include box-sizing(border-box);
           max-width: 100%;
+          padding: 10px;
+        }
+
+        a.raw {
+          display: none;
+        }
+
+        &:hover {
+          a.raw {
+            display: inline;
+            @include mini-button($bright-color-2);
+            @include position(absolute, 0px 0px 0 0);
+          }
         }
       }
     }
