@@ -35,7 +35,7 @@ div.dashboard-wrap {
         &:before {
           color: $bg-shade-3;
           content: "Or drop one";
-          font-size: $font-size-huge;
+          font-size: $font-size-base-2;
           font-weight: bold;
           @include position(absolute, 40px 0px 0 0px );
           text-align: center;
@@ -46,7 +46,6 @@ div.dashboard-wrap {
     label.file {
       background: $bg-shade-2;
       cursor: pointer;
-      font-size: $font-size-small;
       overflow: hidden;
       padding: 17px 9px;
       position: relative;
@@ -87,7 +86,6 @@ div.dashboard-wrap {
       border: none;
       border-radius: 0;
       color: $text-color;
-      font-size: $font-size-small;
       padding: 10px 9px 9px;
       position: relative;
       -webkit-appearance: none;
@@ -111,7 +109,7 @@ div.dashboard-wrap {
 
     h3 {
       color: $bg-shade-4;
-      font-size: 30px;
+      font-size: $font-size-base-2;
       text-align: center;
     }
   }

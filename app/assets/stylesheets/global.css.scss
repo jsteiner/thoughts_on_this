@@ -1,3 +1,7 @@
+*::selection {
+  background: rgba(0,0,0,0.2);
+}
+
 html, body {
   height: 100%;
 }
@@ -5,13 +9,18 @@ html, body {
 body {
   background: $bg-color;
   color: $text-color;
-  font-family: $helvetica;
+  font-family: $global-face;
   min-width: $min-width;
 
   a,
   a:link,
   a:visited {
     color: $bg-shade-7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $global-face;
+    font-weight: 600;
   }
 
   ul {
@@ -32,7 +41,7 @@ body {
     padding: 5px;
 
     h2 {
-      font-size: $font-size-med;
+      font-size: $font-size-small;
     }
 
     ul li {
@@ -60,7 +69,7 @@ header {
         &.brand {
           background: transparent url('logo-small.png') no-repeat;
           color: $bg-shade-7;
-          font-size: $font-size-huge;
+          font-size: $font-size-base-2;
           font-style: italic;
           font-weight: bold;
           letter-spacing: -.05em;
