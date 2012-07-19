@@ -1,9 +1,10 @@
 $top-space: 200px;
 
 body.pages-show {
-  div.main-wrap {
-    margin-top: $top-space;
+  @include box-sizing(border-box);
+  padding-top: $top-space;
 
+  div.main-wrap {
     h1 {
       background: transparent url('logo-large.png') no-repeat center center;
       color: $bg-shade-7;

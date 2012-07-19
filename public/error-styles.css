@@ -1,0 +1,12 @@
+div.wrapper {
+  color: #A3A3A3;
+  font: 18px "helvetica neue", Helvetica, arial, sans-serif;
+  padding-top: 200px;
+  text-align: center;
+}
+
+div.wrapper img {
+  display: block;
+  margin: 0 auto 50px;
+  width: 402px;
+}
