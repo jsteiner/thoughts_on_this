@@ -47,7 +47,7 @@ body {
 
 header {
   nav {
-    background: $bg-nav;
+    background: $bg-nav url('logo-small.png') no-repeat 20px 9px;
     height: $header-height;
 
     div.nav-wrap {
@@ -58,12 +58,14 @@ header {
         text-decoration: none;
 
         &.brand {
+          display: none;
           color: $bg-shade-7;
           font-size: $font-size-huge;
           font-style: italic;
           font-weight: bold;
           letter-spacing: -.05em;
           @include position(absolute, 8px 0 0 20px);
+
         }
       }
 
