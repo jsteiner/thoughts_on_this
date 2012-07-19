@@ -86,7 +86,7 @@ body.discussions-show {
 
         li {
           display: inline;
-          font-size: $font-size-small;
+          font-size: $font-size-small-1;
           margin-left: 4px;
 
           a {
@@ -111,7 +111,7 @@ body.discussions-show {
         text-align: center;
 
         code {
-          font-size: $font-size-med;
+          font-size: $font-size-small;
           margin: 0;
           padding: 20px;
           text-align: left;
@@ -183,7 +183,7 @@ body.discussions-show {
               color: $black;
               display: block;
               float: left;
-              font-size: $font-size-small;
+              font-size: $font-size-small-1;
               overflow: hidden;
               padding: $padding 5px $padding $padding;
               text-align: right;
@@ -253,7 +253,7 @@ body.discussions-show {
             padding: 10px;
 
             p {
-              font-size: $font-size-med;
+              font-size: $font-size-small;
               margin-bottom: 30px;
               padding-left: 5px;
 

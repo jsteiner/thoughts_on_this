@@ -32,7 +32,7 @@ body {
     padding: 5px;
 
     h2 {
-      font-size: $font-size-med;
+      font-size: $font-size-small;
     }
 
     ul li {
@@ -60,7 +60,7 @@ header {
         &.brand {
           background: transparent url('logo-small.png') no-repeat;
           color: $bg-shade-7;
-          font-size: $font-size-huge;
+          font-size: $font-size-base-2;
           font-style: italic;
           font-weight: bold;
           letter-spacing: -.05em;
