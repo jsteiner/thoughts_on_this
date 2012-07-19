@@ -17,7 +17,7 @@ body.discussions-index {
 
     ul#discussions {
       li {
-        background: $bg-shade-4;
+        background: $bg-shade-3;
         @include clearfix;
         font-size: 18px;
         list-style: none;
@@ -25,7 +25,7 @@ body.discussions-index {
         $time-width: 200px;
 
         time {
-          color: $black;
+          color: $text-color;
           float: left;
           padding: 10px;
           text-align: right;
@@ -33,9 +33,9 @@ body.discussions-index {
         }
 
         a {
-          background: $bg-shade-2;
+          background: $bg-shade-1;
           border-left: $top-color-border-width solid $bg-shade-7;
-          color: $black;
+          color: $text-color;
           display: block;
           padding: 10px;
           margin-left: $time-width + 20px;
@@ -43,7 +43,7 @@ body.discussions-index {
           text-decoration: none;
 
           &:hover {
-            background: $bg-shade-3;
+            background: $bg-shade-2;
           }
         }
 
@@ -184,6 +184,7 @@ body.discussions-show {
               display: block;
               float: left;
               font-size: $font-size-small-1;
+              font-weight: 500;
               overflow: hidden;
               padding: $padding 5px $padding $padding;
               text-align: right;

@@ -6,7 +6,7 @@
 @mixin chat-color($color) {
   background-color: $color;
   color: adjust-color($color,
-    $lightness: -40%,
+    $lightness: -45%,
     $saturation: -10%);
 }
 

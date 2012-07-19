@@ -1,7 +1,6 @@
 //************************************************************************//
 // Form UI Library
 //************************************************************************//
-$form-font-family: $lucida-grande;
 
 div.field {
   line-height: 0;
@@ -11,8 +10,10 @@ div.field {
 input,
 label,
 select {
+  color: $text-color;
   display: block;
-  font-family: $form-font-family;
+  font-family: $global-face;
+  font-size: $font-size-small;
 }
 
 label {
@@ -24,6 +25,8 @@ textarea,
   background-color: $bg-shade-2;
   border: none;
   @include box-sizing(border-box);
+  color: $text-color;
+  font-size: $font-size-small;
   margin-bottom: 12px;
   padding: 0.7em 0.45em;
   @include transition(border-color);
