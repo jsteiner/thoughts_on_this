@@ -10,3 +10,22 @@ div.wrapper img {
   margin: 0 auto 50px;
   width: 402px;
 }
+
+div.wrapper p a {
+  background: #E9E9E9;
+  border-top: 3px solid #CBCBCB;
+  color: #6B6B6B;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+  padding: 2px 5px 3px 5px;
+  text-decoration: none;
+}
+
+div.wrapper p a:hover {
+  background: #F5F5F5;
+  color: #2F2F2F;
+}
+
+div.wrapper p a:nth-child(1) { border-color: #B7CA63; }
+div.wrapper p a:nth-child(2) { border-color: #62B6E0; }
