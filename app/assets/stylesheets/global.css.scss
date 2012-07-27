@@ -67,15 +67,14 @@ header {
         text-decoration: none;
 
         &.brand {
-          background: transparent url('logo-small.png') no-repeat;
+          background: $bg-shade-1;
+          border-top: 5px solid $bright-color-5;
           color: $bg-shade-7;
-          font-size: $font-size-base-2;
-          font-style: italic;
-          font-weight: bold;
-          letter-spacing: -.05em;
-          @include position(absolute, 8px 0 0 20px);
-          text-indent: -500px;
-          width: 153px;
+          font: normal 15px $proxima;
+          letter-spacing: 1px;
+          padding: .3em .9em;
+          @include position(absolute, 9px 0 0 20px);
+          text-align: center;
         }
       }
 

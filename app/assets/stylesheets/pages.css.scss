@@ -6,12 +6,16 @@ body.pages-show {
 
   div.main-wrap {
     h1 {
-      background: transparent url('logo-large.png') no-repeat center center;
+      @include box-sizing(border-box);
+      background-color: $bg-button;
+      border-top: 15px solid $bright-color-5;
       color: $bg-shade-7;
-      font-size: 60px;
-      height: 115px;
+      font: bold 60px $proxima;
+      height: 110px;
+      margin: 0 auto 20px;
+      padding-top: 10px;
       text-align: center;
-      text-indent: -999999px;
+      width: 550px;
     }
 
     p {
