@@ -1,19 +1,24 @@
-<%= form_for @image_subject do |form| %>
-  <% if controller.controller_name == 'image_subjects' %>
+<%= form_for @discussion do |form| %>
+  <% if controller.controller_name == "discussions" %>
     <%= render "shared/error_messages", :object => @discussion %>
   <% end %>
 
-  <div class='field'>
-    <%= text_field_tag 'image_discussion_name', nil, placeholder: "Name your discussion" %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'Name your discussion' %>
   </div>
+
   <div class='field'>
     <label class="file">
       <span>Upload a file</span>
       <%= form.file_field :image %>
     </label>
   </div>
-  <div class="drop"></div>
-  <div class='action'>
-    <%= form.submit 'Discuss', class: 'btn btn-primary' %>
+
+  <div class="drop" id="file-drop"></div>
+
+  <%= number_field_tag :image_subject_id %>
+
+  <div class="action">
+    <%= form.submit "Discuss", class: "btn btn-primary" %>
   </div>
 <% end %>

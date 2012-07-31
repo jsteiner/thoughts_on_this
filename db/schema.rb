@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718214104) do
+ActiveRecord::Schema.define(:version => 20120801150221) do
 
   create_table "discussions", :force => true do |t|
     t.string   "name",                              :null => false
@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(:version => 20120718214104) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "image_subjects", ["user_id"], :name => "index_image_subjects_on_user_id"
 
   create_table "messages", :force => true do |t|
     t.integer  "discussion_id"

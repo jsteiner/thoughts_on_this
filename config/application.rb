@@ -64,5 +64,7 @@ module ThoughtsOnThis
 
     # Add flash to assets
     config.assets.paths << Rails.root.join("vendor", "assets", "flash")
+
+    config.middleware.use 'Rack::RawUpload', paths: ['/image_subjects']
   end
 end

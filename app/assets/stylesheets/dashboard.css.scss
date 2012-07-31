@@ -65,6 +65,34 @@ div.dashboard-wrap {
       width: auto;
       z-index: 2;
     }
+
+    #file-drop {
+      &.in {
+        border-color: black;
+      }
+
+      &.hover {
+        border-color: green;
+      }
+
+      &.fade {
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        opacity: 1;
+      }
+    }
+
+    .thumb {
+      max-width: 300px;
+      border: 3px solid red;
+    }
+
+    #image_subject_id {
+      display: none;
+    }
   }
 
   input[type=submit] {
