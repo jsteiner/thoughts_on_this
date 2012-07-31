@@ -1,17 +1,15 @@
 class ImageSubjectsController < ApplicationController
   before_filter :authorize
 
-  def create
-    @image_subject = ImageSubject.new(params[:image_subject])
-    @discussion = current_user.discussions.new(name: params[:image_discussion_name])
-    @discussion.subject = @image_subject
+  respond_to :json
 
-    if @discussion.save
-      redirect_to @discussion
+  def create
+    @image_subject = current_user.image_subjects.new(image: params[:discussion][:image])
+
+    if @image_subject.save
+      render json: @image_subject
     else
-      @text_subject = TextSubject.new
-      @discussions = current_user.discussions.persisted
-      render 'dashboards/show'
+      head :bad_request
     end
   end
 end

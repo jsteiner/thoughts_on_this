@@ -8,9 +8,9 @@ module Upload
   end
 
   def upload_image(filename)
-    within '#new_image_subject' do
-      fill_in 'image_discussion_name', with: 'something'
-      attach_file('image_subject_image',
+    within '#new_discussion' do
+      fill_in 'discussion_name', with: 'something'
+      attach_file('discussion_image',
                   File.join(Rails.root, "features/support/#{filename}"))
       click_button 'Discuss'
     end

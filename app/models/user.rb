@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
   has_many :discussions, dependent: :destroy
+  has_many :image_subjects, dependent: :destroy
   attr_accessible :name
 
   def discussion_timeline

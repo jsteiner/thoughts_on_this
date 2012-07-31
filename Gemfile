@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
-gem 'pg'
-gem 'high_voltage'
+
+gem 'bourbon'
 gem 'clearance'
+gem 'flutie'
+gem 'high_voltage'
+gem 'jquery-rails'
 gem 'paperclip'
+gem 'pg'
 gem 'pusher'
+gem 'rack-raw-upload'
 gem 'thin'
 
 group :development do
@@ -31,7 +36,3 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
-gem 'bourbon'
-gem 'flutie'
