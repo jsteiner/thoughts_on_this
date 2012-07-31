@@ -1,6 +1,4 @@
-$(document).ready(function() {
-  v_align_image();
-
+$(window).load(function() { // using window.load so it detects images http://stackoverflow.com/questions/544993/
   $('a.share').toggle(
     function(e) {
       $(this).parent().prev('li').show();
@@ -11,6 +9,8 @@ $(document).ready(function() {
       e.preventDefault();
     }
   );
+
+  v_align_image();
 
   $(window).resize(function () {
     v_align_image();
