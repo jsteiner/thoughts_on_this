@@ -29,11 +29,12 @@ $(document).ready(function() {
       // Closure to capture the file information.
       reader.onload = (function(theFile) {
         return function(e) {
+          $('#file-preview').empty();
           $('<img/>', {
             src: e.target.result,
             class: 'thumb',
             title: escape(theFile.name)
-          }).appendTo('#file-drop');
+          }).appendTo('#file-preview');
         };
       })(file);
       reader.readAsDataURL(file);
