@@ -54,3 +54,24 @@ Run individual unit tests with:
 Run individual acceptance tests with:
 
     cucumber features/create_discussion.feature
+
+Deployment
+----------
+
+Add remotes for production and staging:
+
+    git remote add staging git@heroku.com:thoughts-staging.git
+    git remote add production git@heroku.com:thoughts-production.git
+
+Push changes to production and staging:
+
+    git push staging
+    git push production
+
+If there are new migrations:
+
+    heroku run rake db:migrate --app thoughts-staging
+    heroku run rake db:migrate --app thoughts-production
+
+    heroku restart --app thoughts-staging
+    heroku restart --app thoughts-staging
