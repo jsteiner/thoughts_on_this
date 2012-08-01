@@ -3,7 +3,7 @@ ThoughtsOnThis::Application.routes.draw do
   resource :dashboard, only: [:show], path: 'arkboard'
   resources :image_subjects, only: [:create]
   resources :text_subjects, only: [:create]
-  resources :discussions, only: [:index, :create, :show, :edit, :update], path: 'llaborate' do
+  resources :discussions, exclude: [:destroy], path: 'llaborate' do
     resources :messages, only: [:create]
     resources :names, only: [:create]
   end
