@@ -35,7 +35,7 @@ div.dashboard-wrap {
         &:before {
           color: $bg-shade-3;
           content: "Or drop one";
-          font-size: $font-size-base-2;
+          font-size: $font-size-base-3;
           font-weight: bold;
           @include position(absolute, 40px 0px 0 0px );
           text-align: center;
@@ -109,7 +109,7 @@ div.dashboard-wrap {
 
     h3 {
       color: $bg-shade-4;
-      font-size: $font-size-base-2;
+      font-size: $font-size-base-3;
       text-align: center;
     }
   }
