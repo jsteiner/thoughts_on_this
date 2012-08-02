@@ -10,7 +10,8 @@ $(document).ready(function() {
   $('#new_discussion').fileupload({
     url: '/image_subjects.json',
     dataType: 'json',
-    dropZone: $('#file-drop')
+    dropZone: $('#file-drop'),
+    maxFileSize: 2000000 // 2MB
    });
 
   $('#new_discussion').bind('fileuploadadd', function (e, data) {
