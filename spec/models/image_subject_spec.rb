@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe ImageSubject do
   it { should have_one(:discussion) }
+  it { should belong_to(:user) }
   it { should allow_mass_assignment_of(:image) }
   it { should accept_nested_attributes_for(:discussion) }
 

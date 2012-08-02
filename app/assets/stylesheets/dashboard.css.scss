@@ -19,15 +19,28 @@ div.dashboard-wrap {
       padding-top: 80px;
       width: 300px;
 
-      div.drop {
+      div#file-drop {
         background: transparent url('/assets/drop.png') no-repeat center 100px;
         border: 5px dashed $bg-shade-2;
         @include box-sizing(border-box);
         height: 250px;
+        padding: 10px;
         position: relative;
-        @include transition(background-color .5s ease-in-out);
+        text-align: center;
+        @include transition(all .5s ease-in-out);
 
-        &.hovered {
+        img.thumb {
+          max-height: 100%;
+          max-width: 100%;
+          opacity: .5;
+          @include transition(opacity .3s ease-in-out);
+
+          &.file-upload-done {
+            opacity: 1;
+          }
+        }
+
+        &.hover {
           background-color: $bg-shade-1;
           border-color: $bg-shade-3;
         }
@@ -39,6 +52,10 @@ div.dashboard-wrap {
           font-weight: bold;
           @include position(absolute, 40px 0px 0 0px );
           text-align: center;
+        }
+
+        &.dropped:before {
+          display: none;
         }
       }
     }
@@ -64,6 +81,10 @@ div.dashboard-wrap {
       @include position(absolute, 0px 0px 0px 0px);
       width: auto;
       z-index: 2;
+    }
+
+    #image_subject_id {
+      display: none;
     }
   }
 
