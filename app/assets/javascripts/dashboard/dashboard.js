@@ -30,12 +30,13 @@ $(document).ready(function() {
       // Closure to capture the file information.
       reader.onload = (function(theFile) {
         return function(e) {
-          $('#file-preview').empty();
+          $('#file-drop').empty();
           $('<img/>', {
             src: e.target.result,
             class: 'thumb',
             title: escape(theFile.name)
-          }).appendTo('#file-preview');
+          }).appendTo('#file-drop');
+          $('#file-drop').addClass("dropped");
         };
       })(file);
       reader.readAsDataURL(file);
@@ -44,7 +45,6 @@ $(document).ready(function() {
 
   $('#new_discussion').bind('fileuploaddone', function (e, data) {
     $('#image_subject_id').val(data.result.id);
-    $('.thumb').css('border-color', 'green');
   });
 
   $(document).bind('drop dragover', function (e) {
