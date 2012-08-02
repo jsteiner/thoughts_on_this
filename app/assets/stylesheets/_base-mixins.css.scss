@@ -14,7 +14,22 @@
   background: $bg-button;
   border-top: $top-border-mini-width solid $color;
   color: $bg-shade-7;
-  padding: 2px 5px 3px 5px;
+  padding: 2px 5px 3px;
+  text-decoration: none;
+
+  &:hover {
+    background: $bg-shade-1;
+    color: $bg-shade-8;
+  }
+}
+
+
+@mixin med-button($color) {
+  background: $bg-button;
+  border-top: 4px solid $color;
+  color: $bg-shade-7;
+  font-size: $font-size-base;
+  padding: 3px 10px 4px;
   text-decoration: none;
 
   &:hover {

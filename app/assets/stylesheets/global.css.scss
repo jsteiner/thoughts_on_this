@@ -19,8 +19,12 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: $global-face;
+    font-family: $proxima;
     font-weight: 600;
+  }
+
+  h2 {
+    font-size: $font-size-base-2;
   }
 
   ul {
