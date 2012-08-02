@@ -3,7 +3,7 @@
   <% content_for :javascript do %>
     <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
     <%= tag :meta, name: 'discussion_url', content: @discussion.url %>
-    <%= tag :meta, name: 'current_user_id', content: current_user.id %>
+    <%= tag :meta, name: 'current_user_id', content: user_or_guest_id %>
     <%= javascript_include_tag 'discussions/chat' %>
   <% end %>
 

@@ -18,7 +18,7 @@ var user_name = $('#template-message').attr('data-user-name');
 var pusher = new Pusher('acecc5ffed2935bdc2d9');
 var channel = pusher.subscribe(discussion_url);
 channel.bind('new_message', function(data) {
-  if(!current_user_id || data.user_id === current_user_id) {
+  if(data.user_id === current_user_id) {
     $('.unsent').addClass('user-number-' + data.user_number).removeClass('unsent');
     $('#message_content').addClass('user-number-' + data.user_number);
   } else {
