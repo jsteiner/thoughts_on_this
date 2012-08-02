@@ -45,6 +45,7 @@ $(document).ready(function() {
 
   $('#new_discussion').bind('fileuploaddone', function (e, data) {
     $('#image_subject_id').val(data.result.id);
+    $('.thumb').addClass('file-upload-done');
   });
 
   $(document).bind('drop dragover', function (e) {

@@ -32,6 +32,12 @@ div.dashboard-wrap {
         img.thumb {
           max-height: 100%;
           max-width: 100%;
+          opacity: .5;
+          @include transition(opacity .3s ease-in-out);
+
+          &.file-upload-done {
+            opacity: 1;
+          }
         }
 
         &.hover {
