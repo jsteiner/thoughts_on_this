@@ -1,54 +1,67 @@
-$('#chat-container').scrollTop($('#messages').height());
+$(document).ready(function() {
+  $('#chat-container').scrollTop($('#messages').height());
 
-<% if Rails.env.development? %>
-  // Enable pusher logging - don't include this in production
-  Pusher.log = function(message) {
-    if (window.console && window.console.log) window.console.log(message);
-  };
+  <% if Rails.env.development? %>
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) window.console.log(message);
+    };
 
-  // Flash fallback logging - don't include this in production
-  WEB_SOCKET_DEBUG = true;
-<% end %>
+    // Flash fallback logging - don't include this in production
+    WEB_SOCKET_DEBUG = true;
+  <% end %>
 
-var current_user_id = $('meta[name=current_user_id]').attr('content');
-var discussion_url = $('meta[name=discussion_url]').attr('content');
-var user_name = $('#template-message').attr('data-user-name');
+  var current_user_id = $('meta[name=current_user_id]').attr('content');
+  var discussion_url = $('meta[name=discussion_url]').attr('content');
+  var user_name = $('#template-message').attr('data-user-name');
+  var hid_share_div = false;
 
-// Pusher callback
-var pusher = new Pusher('acecc5ffed2935bdc2d9');
-var channel = pusher.subscribe(discussion_url);
-channel.bind('new_message', function(data) {
-  if(data.user_id === current_user_id) {
-    $('.unsent').addClass('user-number-' + data.user_number).removeClass('unsent');
-    $('#message_content').addClass('user-number-' + data.user_number);
-  } else {
-    $("#messages").append(data.message);
-  }
-});
+  // Pusher callback
+  var pusher = new Pusher('acecc5ffed2935bdc2d9');
+  var channel = pusher.subscribe(discussion_url);
+  channel.bind('new_message', function(data) {
+    if(data.user_id === current_user_id) {
+      $('.unsent').addClass('user-number-' + data.user_number).removeClass('unsent');
+      $('#message_content').addClass('user-number-' + data.user_number);
+    } else {
+      if(!hid_share_div) {
+        $('.share').hide();
+        hid_share_div = true;
+      }
 
-// Send on 'return'
-$('#message_content').keypress(function(e) {
-  if(e.which == 13) {
-    e.preventDefault();
-    if(!$('#message_content').val().match(/^\s*$/)) {
-      $('form#new_message').submit();
-      $("#new_message")[0].reset();
+      $("#messages").append(data.message);
     }
-    return false;
-  }
-});
+  });
 
-// Append to chat on send
-$('form#new_message').submit(function() {
-  var template = $('#template-message').clone();
-  template.children().first().text(user_name);
-  template.children().last().text($('#message_content').val());
-  template.appendTo("#messages").removeAttr('id', 'template-message');
+  // Send on 'return'
+  $('#message_content').keypress(function(e) {
+    if(e.which == 13) {
+      e.preventDefault();
+      if(!$('#message_content').val().match(/^\s*$/)) {
+        $('form#new_message').submit();
+        $("#new_message")[0].reset();
+      }
+      return false;
+    }
+  });
+
+  // Append to chat on send
+  $('form#new_message').submit(function() {
+    if(!hid_share_div) {
+      $('.share').hide();
+      hid_share_div = true;
+    }
+
+    var template = $('#template-message').clone();
+    template.children().first().text(user_name);
+    template.children().last().text($('#message_content').val());
+    template.appendTo("#messages").removeAttr('id', 'template-message');
 
 
-  // Scroll chat
-  var chat = document.getElementById('chat-container');
-  if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
-    chat.scrollTop = chat.scrollHeight;
-  }
+    // Scroll chat
+    var chat = document.getElementById('chat-container');
+    if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
+      chat.scrollTop = chat.scrollHeight;
+    }
+  });
 });

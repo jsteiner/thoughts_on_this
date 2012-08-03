@@ -11,7 +11,7 @@
   <ul id="messages">
       <li id='template-message' data-user-name='<%= current_user.name %>' data-user-number='<%= @discussion.user_number(current_user.name) %>'><strong class='unsent'></strong><span></span></li>
       <%= render @messages %>
-    <% if @messages.empty? %>
+    <% if @discussion.user == current_user && @messages.empty? %>
       <div class="share">
         <p>This is where you'll be chatting.</p>
         <p>To get others in on the conversation, give them this link:</p>
