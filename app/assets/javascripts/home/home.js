@@ -12,7 +12,15 @@ $(document).ready(function() {
   $(window).scroll(function(e) {
     var windowHeight = $(window).height(),
         scroll = $(window).scrollTop(),
-        wholeHeight = $('html').innerHeight();
-    console.log(wholeHeight);
+        wholeHeight = $(document).outerHeight();
+    console.log(wholeHeight - scroll, windowHeight);
+
+    if (wholeHeight - scroll == windowHeight) {
+      $('section.call-to-action.bottom').css('height', windowHeight + 17)
+    };
+
+    if (scroll > 1) {
+      $('body').addClass('down')
+    }
   })
 });

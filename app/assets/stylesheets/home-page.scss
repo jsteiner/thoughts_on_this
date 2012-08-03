@@ -44,10 +44,17 @@ body.pages-show {
     text-align: center;
   }
 
+  &:not(.down) {
+    section {
+      border-color: transparent !important;
+    }
+  }
+
   section {
     border-top: 17px solid $bg-shade-3;
     padding: 100px 0;
     position: relative;
+    @include transition(border-color 1s ease-in-out);
 
     div.section-wrap {
       margin: 0 auto;
