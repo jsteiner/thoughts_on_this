@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore-min
+//= require jack_up
 //= require_directory
 //= require highlight.pack

@@ -1,5 +1,5 @@
 class Discussion < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :subject_id
 
   belongs_to :subject, polymorphic: true
   belongs_to :user

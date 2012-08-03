@@ -7,6 +7,7 @@ gem 'bourbon'
 gem 'clearance'
 gem 'flutie'
 gem 'high_voltage'
+gem 'jack_up', github: 'thoughtbot/jack_up'
 gem 'jquery-rails'
 gem 'paperclip'
 gem 'pg'
@@ -36,4 +37,5 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'underscore'
 end

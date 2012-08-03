@@ -11,8 +11,8 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    @discussion = current_user.discussions.new(name: params[:discussion][:name])
-    @discussion.subject = find_or_create_image_subject
+    @discussion = current_user.discussions.new(params[:discussion].except(:image))
+    @discussion.subject_type = 'ImageSubject'
 
     if @discussion.save
       redirect_to @discussion

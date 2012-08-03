@@ -20,7 +20,6 @@ div.dashboard-wrap {
       width: 300px;
 
       div#file-drop {
-        background: transparent url('/assets/drop.png') no-repeat center 100px;
         border: 5px dashed $bg-shade-2;
         @include box-sizing(border-box);
         height: 250px;
@@ -29,7 +28,21 @@ div.dashboard-wrap {
         text-align: center;
         @include transition(all .5s ease-in-out);
 
-        img.thumb {
+        div[data-placeholder=true] {
+          height: 250px;
+          background: transparent url('/assets/drop.png') no-repeat center 100px;
+
+          &:before {
+            color: $bg-shade-3;
+            content: "Or drop one";
+            font-size: $font-size-base-3;
+            font-weight: bold;
+            @include position(absolute, 40px 0px 0 0px );
+            text-align: center;
+          }
+        }
+
+        img {
           max-height: 100%;
           max-width: 100%;
           opacity: .5;
@@ -43,15 +56,6 @@ div.dashboard-wrap {
         &.hover {
           background-color: $bg-shade-1;
           border-color: $bg-shade-3;
-        }
-
-        &:before {
-          color: $bg-shade-3;
-          content: "Or drop one";
-          font-size: $font-size-base-3;
-          font-weight: bold;
-          @include position(absolute, 40px 0px 0 0px );
-          text-align: center;
         }
 
         &.dropped:before {
