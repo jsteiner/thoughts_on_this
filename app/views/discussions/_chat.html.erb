@@ -5,7 +5,6 @@
     <%= tag :meta, name: 'discussion_url', content: @discussion.url %>
     <%= tag :meta, name: 'current_user_id', content: user_or_guest_id %>
     <%= javascript_include_tag 'discussions/chat' %>
-    <%= javascript_include_tag 'discussions/copy' %>
   <% end %>
 
   <ul id="messages">
@@ -13,6 +12,10 @@
       <%= render @messages %>
     <% if @discussion.user == current_user && @messages.empty? %>
       <div class="share">
+        <% content_for :javascript do %>
+          <%= javascript_include_tag 'discussions/copy' %>
+        <% end %>
+
         <p>This is where you'll be chatting.</p>
         <p>To get others in on the conversation, give them this link:</p>
         <div class="copy-url">
