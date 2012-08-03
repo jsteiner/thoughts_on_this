@@ -3,50 +3,6 @@ $top-space: 200px;
 body.pages-show {
   @include box-sizing(border-box);
   padding-top: $top-space;
-
-  div.main-wrap {
-    h1 {
-      @include box-sizing(border-box);
-      background-color: $bg-button;
-      border-top: 15px solid $bright-color-5;
-      color: $bg-shade-7;
-      font: bold 60px $proxima;
-      height: 110px;
-      margin: 0 auto 20px;
-      padding-top: 10px;
-      text-align: center;
-      width: 550px;
-    }
-
-    p {
-      color: $bg-shade-6;
-      font-style: italic;
-      text-align: center;
-    }
-
-    section.call-to-action {
-      margin-top: 100px;
-      text-align: center;
-
-      a {
-        font-size: $font-size-base;
-        margin-right: 20px;
-        text-decoration: none;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        &.sign-up {
-          border-color: $bright-color-4;
-        }
-
-        &.sign-in {
-          border-color: $bright-color-5;
-        }
-      }
-    }
-  }
 }
 
 body.clearance-users-new {

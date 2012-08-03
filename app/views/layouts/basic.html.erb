@@ -6,14 +6,15 @@
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://use.typekit.com/nhp3bbg.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'waypoints.min' %>
+  <%= javascript_include_tag 'home/home' %>
+
 </head>
 <body class="<%= body_class %>">
 
   <div class="main-wrap">
     <%= yield %>
   </div>
-
-  <%= javascript_include_tag "application" %>
-  <%= yield :javascript %>
 </body>
 </html>

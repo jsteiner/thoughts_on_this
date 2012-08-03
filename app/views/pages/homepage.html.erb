@@ -1,6 +1,78 @@
-<h1>Thoughts on This</h1>
-<p data-role="description">The best way to get feedback</p>
+<header>
+  <h1>Thoughts on This</h1>
+  <p>The best way to get feedback</p>
 
-<section class="call-to-action">
-  <%= link_to "Sign up", sign_up_path, class: 'button sign-up' %><%= link_to "Sign in", sign_in_path, class: 'button sign-in' %>
+  <section class="call-to-action">
+    <%= link_to "Sign up", sign_up_path, class: 'button sign-up' %><%= link_to "Sign in", sign_in_path, class: 'button sign-in' %>
+  </section>
+</header>
+<section id="create">
+  <div class="section-wrap">
+    <h2>Upload a file</h2><h2 class="divider">OR</h2><h2>Paste some code</h2>
+    <div id="drop-box"></div><div id="code-box">
+      <pre><code>module ItemsHelper
+  def truncate_text(url)
+    truncate(url, length: 110)
+  end
+end<span class="cursor">|</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="share">
+  <div class="section-wrap">
+    <h2>Share a link</h2>
+    <div id="lame-chat">
+      <ol class="user-names">
+        <li>Edward</li>
+        <li>Josh</li>
+        <li>Josh</li>
+        <li>Edward</li>
+      </ol>
+      <ol class="messages">
+        <li>So, I’m not sure how to impliment this</li>
+        <li>That’s really weird...</li>
+        <li>Can I see the code?</li>
+        <li>Yeah. Let me put it online...</li>
+      </ol>
+      <div class="message-box">Here: thoughtsonthis.co/llaborate/6924af23cd<span class="send">Send</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="chat">
+  <div class="section-wrap">
+    <h2>Chat in real time</h2>
+    <div id="discussion-wrap">
+      <div id="subject">
+        <pre><code><span class="blue">module</span> <span class="yellow">ItemsHelper</span>
+  <span class="blue">def</span> <span class="green">truncate_text</span>(<span class="green">url</span>)
+    <span class="orange">truncate</span>(<span class="green">url</span>, <span class="orange">length</span>: <span class="purple">110</span>)
+  <span class="blue">end</span>
+<span class="blue">end</span></code></pre>
+      </div>
+      <div id="classy-chat">
+        <ol class="user-names">
+          <li class="green">Edward</li>
+          <li class="blue">Josh</li>
+          <li class="blue">Josh</li>
+          <li class="blue">Josh</li>
+        </ol>
+        <ol class="messages">
+          <li>Hey</li>
+          <li>Hey. Ok, let's take a look...</li>
+          <li>Oh</li>
+          <li>I see the problem</li>
+        </ol>
+        <div class="message-box">Speak your mind</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action bottom">
+  <div class="section-wrap scrolled">
+    <h1>Thoughts on This</h1>
+    <%= link_to "Sign up", sign_up_path, class: 'button sign-up' %><%= link_to "Sign in", sign_in_path, class: 'button sign-in' %>
+  </div>
 </section>
