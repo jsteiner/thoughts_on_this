@@ -68,7 +68,7 @@ ThoughtsOnThis::Application.configure do
   PaperclipStorageOptions = {
     storage: :s3,
     s3_credentials: { access_key_id: ENV['S3_KEY'], secret_access_key: ENV['S3_SECRET'] },
-    bucket: 'tot_production',
+    bucket: 'tot_staging',
     path: '/:attachment/:id/:filename'
   }
 end
