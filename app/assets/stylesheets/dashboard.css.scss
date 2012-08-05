@@ -29,6 +29,7 @@ div.dashboard-wrap {
         @include transition(all .5s ease-in-out);
 
         div[data-placeholder=true] {
+          z-index: -1;
           height: 250px;
           background: transparent url('/assets/drop.png') no-repeat center 100px;
 

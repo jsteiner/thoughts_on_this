@@ -4,6 +4,7 @@ $ ->
   jackUp.on 'upload:imageRenderReady', (e, options) ->
     options.image.attr("data-id", options.file.__guid__)
     $('#file-drop').append(options.image)
+    $('label.file > span').text(options.file.name)
 
   jackUp.on "upload:success", (e, options) ->
     $("img[data-id='#{options.file.__guid__}']").addClass 'file-upload-done'
