@@ -1,0 +1,21 @@
+// Profile Mockup
+// ----------------------------------------
+
+body.mockups-profile {
+  div.main-wrap {
+    padding: 20px;
+  }
+
+  h2 {
+    color: $bg-shade-7;
+    margin-bottom: 20px;
+  }
+
+  fieldset {
+    margin-bottom: 40px;
+  }
+
+  input[type=submit] {
+    border-color: $bright-color-4;
+  }
+}

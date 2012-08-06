@@ -20,6 +20,13 @@ label {
   margin-bottom: 5px;
 }
 
+fieldset {
+  background: transparent;
+  border: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
 textarea,
 #{$all-text-inputs} {
   background-color: $bg-shade-2;

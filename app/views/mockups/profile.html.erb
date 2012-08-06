@@ -1,0 +1,15 @@
+<section class="discussion-history">
+  <h2>Update your profile</h2>
+  <%= form_tag('/posts') do %>
+  <%= field_set_tag do %>
+    <%= text_field_tag 'name', 'Edward', placeholder: 'Name' %>
+    <%= text_field_tag 'email', 'edward@edwardloveall.com', placeholder: 'Email', type: 'email' %>
+  <% end %>
+    <h2>Change your password</h2>
+  <%= field_set_tag do %>
+    <%= password_field_tag 'password', nil, placeholder: 'New Password' %>
+    <%= password_field_tag 'confirm', nil, placeholder: 'Confirm Password' %>
+  <% end %>
+    <%= submit_tag 'Save' %>
+  <% end %>
+</section>
