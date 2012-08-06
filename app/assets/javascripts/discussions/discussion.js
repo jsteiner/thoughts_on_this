@@ -1,6 +1,6 @@
-$(document).ready(function() {
-  v_align_image();
+var v_align_image;
 
+$(document).ready(function() {
   $('a.share').toggle(
     function(e) {
       $(this).parent().prev('li').show();
@@ -16,7 +16,7 @@ $(document).ready(function() {
     v_align_image();
   });
 
-  function v_align_image() {
+  v_align_image = function() {
     var wrapper_height = $('.visual').height() * 0.5,
         image_height = $('.visual > img').height() * 0.5,
         target_margin_top = wrapper_height - image_height;
@@ -24,4 +24,8 @@ $(document).ready(function() {
 
     $('.visual > img').css('margin-top', target_margin_top);
   }
+});
+
+$(window).load(function() {
+  v_align_image();
 });
