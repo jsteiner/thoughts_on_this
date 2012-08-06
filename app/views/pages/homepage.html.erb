@@ -2,11 +2,13 @@
   <h1>Thoughts on This</h1>
   <p>The best way to get feedback</p>
 
-  <section class="call-to-action">
+  <section class="call-to-action call-to-action-top">
     <%= link_to "Sign up", sign_up_path, class: 'button sign-up' %><%= link_to "Sign in", sign_in_path, class: 'button sign-in' %>
   </section>
 </header>
-<section id="create">
+
+<section id="create" class="step">
+  <hr id="more" />
   <div class="section-wrap">
     <h2>Upload a file</h2><h2 class="divider">OR</h2><h2>Paste some code</h2>
     <div id="drop-box"></div><div id="code-box">
@@ -19,7 +21,7 @@ end<span class="cursor">|</span></code></pre>
   </div>
 </section>
 
-<section id="share">
+<section id="share" class="step">
   <div class="section-wrap">
     <h2>Share a link</h2>
     <div id="lame-chat">
@@ -35,12 +37,12 @@ end<span class="cursor">|</span></code></pre>
         <li>Can I see the code?</li>
         <li>Yeah. Let me put it online...</li>
       </ol>
-      <div class="message-box">Here: thoughtsonthis.co/llaborate/6924af23cd<span class="send">Send</span></div>
+      <div class="message-box">Here: thoughtsonthis.co/llaborate/6924af23cd<span class="cursor">|</span><span class="send">Send</span></div>
     </div>
   </div>
 </section>
 
-<section id="chat">
+<section id="chat" class="step">
   <div class="section-wrap">
     <h2>Chat in real time</h2>
     <div id="discussion-wrap">
@@ -64,13 +66,13 @@ end<span class="cursor">|</span></code></pre>
           <li>Oh</li>
           <li>I see the problem</li>
         </ol>
-        <div class="message-box">Speak your mind</div>
+        <div class="message-box"><span class="cursor">|</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="call-to-action bottom">
+<section class="call-to-action call-to-action-bottom step">
   <div class="section-wrap scrolled">
     <h1>Thoughts on This</h1>
     <%= link_to "Sign up", sign_up_path, class: 'button sign-up' %><%= link_to "Sign in", sign_in_path, class: 'button sign-in' %>

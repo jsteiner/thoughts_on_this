@@ -32,7 +32,7 @@ body.pages-show {
     color: $bg-shade-7;
     font: bold 60px $proxima;
     height: 110px;
-    margin: 0 auto 150px;
+    margin: 100px auto 100px;
     padding-top: 10px;
     text-align: center;
     width: 550px;
@@ -45,13 +45,30 @@ body.pages-show {
   }
 
   &:not(.down) {
-    section {
-      border-color: transparent !important;
+    section#create,
+    section#share,
+    section#chat,
+    section.call-to-action-top {
+      border-color: transparent;
     }
   }
 
-  section {
-    border-top: 17px solid $bg-shade-3;
+  hr#more {
+    @extend .animation-more-wiggle;
+    border: none;
+    height: 17px;
+    background-color: $bright-color-1;
+    opacity: 0;
+    @include position(absolute, -17px 0 0 0);
+    @include transition(all 1s ease-in-out);
+
+    &.scrolled {
+      @include animation-name(none);
+    }
+  }
+
+  section.step {
+    border-top: 17px solid transparent;
     padding: 100px 0;
     position: relative;
     @include transition(border-color 1s ease-in-out);
@@ -59,12 +76,12 @@ body.pages-show {
     div.section-wrap {
       margin: 0 auto;
       opacity: 0;
-      @include position(relative, 0 0 0 200px);
+      @include position(relative, 100px 0 0 0);
       @include transition(all .5s ease-in-out);
       width: 1000px;
 
       &.scrolled {
-        left: 0px;
+        top: 0px;
         opacity: 1;
       }
     }
@@ -178,7 +195,6 @@ body.pages-show {
         background: $bg-shade-2;
         border-top: 5px solid $bright-color-4;
         clear: both;
-        color: $bg-shade-5;
         height: 78px;
         padding: 10px;
       }
@@ -209,8 +225,16 @@ body.pages-show {
     }
   }
 
+  section.call-to-action-top {
+    border-top: none;
+    padding: 100px 0 0;
+  }
+
+  section.call-to-action-bottom {
+    border-color: $bright-color-4;
+  }
+
   section.call-to-action {
-    border-top-color: transparent;
     text-align: center;
 
     h2 {
@@ -240,6 +264,6 @@ body.pages-show {
   // ----------------------------------------
 
   span.cursor {
-
+    @extend .animation-blink;
   }
 }

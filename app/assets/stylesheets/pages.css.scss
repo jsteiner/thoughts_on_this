@@ -1,8 +1,7 @@
-$top-space: 200px;
+$top-space: 120px;
 
 body.pages-show {
   @include box-sizing(border-box);
-  padding-top: $top-space;
 }
 
 body.clearance-users-new {

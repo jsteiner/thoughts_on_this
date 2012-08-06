@@ -37,3 +37,56 @@
     color: $bg-shade-8;
   }
 }
+
+@mixin more-wiggle {
+  $bottom: -17px;
+  $top: -60px;
+  $dip: $top * .8;
+
+  0% {
+    opacity: 0;
+    top: $bottom;
+  } 64% {
+    opacity: 0;
+    top: $bottom;
+  } 76% {
+    opacity: 1;
+    top: $top;
+  } 82% {
+    top: $dip;
+  } 88% {
+    opacity: 1;
+    top: $top;
+  } 100% {
+    top: $bottom;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes home-more-wiggle { @include more-wiggle; }
+   @-moz-keyframes home-more-wiggle { @include more-wiggle; }
+        @keyframes home-more-wiggle { @include more-wiggle; }
+
+.animation-more-wiggle {
+  @include animation(home-more-wiggle 3s ease-out infinite);
+  @include animation-fill-mode(both);
+  @include animation-delay(1s);
+}
+
+@mixin blink {
+  0% {
+    opacity: 0;
+  } 50% {
+    opacity: 1;
+  } 100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink { @include blink; }
+   @-moz-keyframes blink { @include blink; }
+        @keyframes blink { @include blink; }
+
+.animation-blink {
+  @include animation(blink 1s step-start infinite);
+}
