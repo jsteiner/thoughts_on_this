@@ -30,6 +30,8 @@ $(document).ready(function() {
       }
 
       $("#messages").append(data.message);
+
+      scrollChat();
     }
   });
 
@@ -57,11 +59,13 @@ $(document).ready(function() {
     template.children().last().text($('#message_content').val());
     template.appendTo("#messages").removeAttr('id', 'template-message');
 
+    scrollChat();
+  });
 
-    // Scroll chat
+  var scrollChat = function() {
     var chat = document.getElementById('chat-container');
     if((chat.clientHeight + chat.scrollTop + 72) >= chat.scrollHeight) {
       chat.scrollTop = chat.scrollHeight;
     }
-  });
+  }
 });

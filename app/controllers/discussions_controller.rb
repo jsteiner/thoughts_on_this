@@ -38,6 +38,6 @@ class DiscussionsController < ApplicationController
   private
 
   def find_or_create_image_subject
-    current_user.image_subjects.find_by_id(params[:discussion][:image_id]) || ImageSubject.new(image: params[:discussion][:image])
+    current_user.image_subjects.find_by_id(params[:discussion][:subject_id]) || ImageSubject.new(image: params[:discussion][:image])
   end
 end
